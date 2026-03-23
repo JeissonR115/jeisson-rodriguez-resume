@@ -1,75 +1,140 @@
-# React + TypeScript + Vite
+# Personal CV - React + TypeScript
+[Español](README.es.md)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
+This project is a personal web CV built with React, TypeScript, and Vite, focused on performance, scalability, and clean architecture.
 
-Currently, two official plugins are available:
+It supports multi-language content using JSON files, making it easy to maintain and extend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React
+- Vite
+- TypeScript
+- Prettier + ESLint
+- JSON-based i18n
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-    globalIgnores(['dist']),
-    {
-        files: ['**/*.{ts,tsx}'],
-        extends: [
-            // Other configs...
-
-            // Remove tseslint.configs.recommended and replace with this
-            tseslint.configs.recommendedTypeChecked,
-            // Alternatively, use this for stricter rules
-            tseslint.configs.strictTypeChecked,
-            // Optionally, add this for stylistic rules
-            tseslint.configs.stylisticTypeChecked,
-
-            // Other configs...
-        ],
-        languageOptions: {
-            parserOptions: {
-                project: ['./tsconfig.node.json', './tsconfig.app.json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-            // other options...
-        },
-    },
-]);
+```
+src/
+ ├── assets/        # Static files (images, icons, etc.)
+ ├── components/    # Reusable UI components
+ ├── layouts/       # Layout components
+ ├── pages/         # Main pages (Home, About, etc.)
+ ├── i18n/          # Language files (en.json, es.json)
+ ├── hooks/         # Custom hooks
+ ├── types/         # TypeScript types and interfaces
+ └── App.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+## Multi-language Strategy
 
-export default defineConfig([
-    globalIgnores(['dist']),
-    {
-        files: ['**/*.{ts,tsx}'],
-        extends: [
-            // Other configs...
-            // Enable lint rules for React
-            reactX.configs['recommended-typescript'],
-            // Enable lint rules for React DOM
-            reactDom.configs.recommended,
-        ],
-        languageOptions: {
-            parserOptions: {
-                project: ['./tsconfig.node.json', './tsconfig.app.json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-            // other options...
-        },
-    },
-]);
+Each language is defined in a JSON file:
+
 ```
+src/i18n/
+ ├── en.json
+ └── es.json
+```
+
+Example:
+
+```json
+{
+  "name": "Jeisson Rodriguez",
+  "title": "Software Developer",
+  "about": "I build scalable systems..."
+}
+```
+
+This approach provides:
+
+- Easy translation management
+- Clear separation between content and logic
+- Scalability for additional languages
+
+---
+
+## Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Run development server
+
+```bash
+npm run dev
+```
+
+---
+
+## Code Quality
+
+Format all files:
+
+```bash
+npm run format
+```
+
+Lint project:
+
+```bash
+npm run lint
+```
+
+---
+
+## VS Code Setup
+
+Recommended extensions:
+
+- Prettier
+- ESLint
+
+Recommended settings:
+
+```json
+"editor.formatOnSave": true,
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+}
+```
+
+---
+
+## Future Improvements
+
+- Add dark and light theme support
+- Implement animations with Framer Motion
+- Improve accessibility (a11y)
+- Add SEO optimization
+- Deploy to GitHub Pages or Vercel
+
+---
+
+## License
+
+This project is open-source and available under the MIT License.
+
+---
+
+## Author
+
+**Jeisson Rodriguez**  
+Software Developer
+
+---
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome. Feel free to fork the repository and submit pull requests.
