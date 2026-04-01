@@ -1,0 +1,36 @@
+{
+    "links": [
+        {
+            "key": "about",
+            "href": "#about",
+            "i18n": {
+                "es": "Sobre mí",
+                "en": "About"
+            }
+        },
+        {
+            "key": "skills",
+            "href": "#skills",
+            "i18n": {
+                "es": "Habilidades",
+                "en": "Skills"
+            }
+        },
+        {
+            "key": "projects",
+            "href": "#projects",
+            "i18n": {
+                "es": "Proyectos",
+                "en": "Projects"
+            }
+        },
+        {
+            "key": "contact",
+            "href": "#contact",
+            "i18n": {
+                "es": "Contacto",
+                "en": "Contact"
+            }
+        }
+    ]
+}

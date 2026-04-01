@@ -1,0 +1,144 @@
+@use 'sass:map';
+
+// ─── Core Color Tokens (raw) ──────────────────────────────────
+$palette: (
+    orange-500: #f2441d,
+    orange-400: #f2a25c,
+    orange-300: #e98228,
+
+    blue-700: #103173,
+    blue-500: #2c5ec2,
+
+    neutral-900: #0b0b0c,
+    neutral-800: #242426,
+    neutral-700: #2d3958,
+    neutral-300: #ddd4cc,
+    neutral-200: #ece7e5,
+    neutral-100: #f2f2f2,
+);
+
+// ─── Semantic Tokens (light / dark) ───────────────────────────
+$theme-light: (
+    primary: map.get($palette, orange-500),
+    primary-light: map.get($palette, orange-300),
+    bg: map.get($palette, neutral-200),
+    bg-secondary: map.get($palette, neutral-100),
+    bg-elevated: map.get($palette, neutral-100),
+    text: map.get($palette, neutral-700),
+    text-strong: map.get($palette, neutral-800),
+    border: map.get($palette, orange-400),
+);
+
+$theme-dark: (
+    primary: map.get($palette, orange-500),
+    primary-light: map.get($palette, orange-400),
+    bg: map.get($palette, neutral-800),
+    bg-secondary: map.get($palette, blue-700),
+    bg-elevated: map.get($palette, neutral-800),
+    text: map.get($palette, neutral-300),
+    text-strong: map.get($palette, neutral-100),
+    border: map.get($palette, orange-500),
+);
+
+// ─── Helper ───────────────────────────────────────────────────
+@function token($map, $key) {
+    @return map.get($map, $key);
+}
+
+// ─── CSS Variables ────────────────────────────────────────────
+:root {
+    --color-primary: #{token($theme-light, primary)};
+    --color-primary-light: #{token($theme-light, primary-light)};
+
+    --color-bg: #{token($theme-light, bg)};
+    --color-bg-secondary: #{token($theme-light, bg-secondary)};
+    --color-bg-elevated: #{token($theme-light, bg-elevated)};
+
+    --color-text: #{token($theme-light, text)};
+    --color-text-strong: #{token($theme-light, text-strong)};
+
+    --color-border: #{token($theme-light, border)};
+
+    --color-black: #{map.get($palette, neutral-900)};
+    --color-white: #{map.get($palette, neutral-100)};
+}
+
+[data-theme='dark'] {
+    --color-primary: #{token($theme-dark, primary)};
+    --color-primary-light: #{token($theme-dark, primary-light)};
+
+    --color-bg: #{token($theme-dark, bg)};
+    --color-bg-secondary: #{token($theme-dark, bg-secondary)};
+    --color-bg-elevated: #{token($theme-dark, bg-elevated)};
+
+    --color-text: #{token($theme-dark, text)};
+    --color-text-strong: #{token($theme-dark, text-strong)};
+
+    --color-border: #{token($theme-dark, border)};
+}
+
+// ─── SCSS Shortcuts (optional) ─────────────────────────────────
+$color-primary: var(--color-primary);
+$color-primary-light: var(--color-primary-light);
+
+$bg: var(--color-bg);
+$bg-secondary: var(--color-bg-secondary);
+$bg-elevated: var(--color-bg-elevated);
+
+$text: var(--color-text);
+$text-h: var(--color-text-strong);
+$text-strong: var(--color-text-strong);
+
+$border: var(--color-border);
+
+$accent: var(--color-primary);
+$accent-hover: var(--color-primary-light);
+$accent-active: var(--color-primary);
+$accent-bg: color-mix(in srgb, var(--color-primary) 20%, transparent);
+$accent-border: color-mix(in srgb, var(--color-primary) 35%, transparent);
+
+$social-bg: color-mix(in srgb, var(--color) 10%, transparent);
+$surface-overlay: color-mix(in srgb, var(--color-white) 50%, transparent);
+
+$shadow:
+    rgba(11, 11, 12, 0.1) 0 10px 15px -3px,
+    rgba(11, 11, 12, 0.05) 0 4px 6px -2px;
+
+// ─── Spacing ──────────────────────────────────────────────────
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+
+// ─── Radius ───────────────────────────────────────────────────
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+
+// ─── Typography ───────────────────────────────────────────────
+$font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+$font-mono: ui-monospace, Consolas, monospace;
+$font-heading: $font-sans;
+
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.75rem;
+$font-size-xxl: 2.5rem;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// ─── Transitions ──────────────────────────────────────────────
+$transition-fast: 0.15s ease;
+$transition-normal: 0.25s ease;
+$transition-slow: 0.4s ease;
+
+// ─── Z-index ──────────────────────────────────────────────────
+$z-base: 1;
+$z-dropdown: 10;
+$z-modal: 100;
+$z-toast: 1000;
