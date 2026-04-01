@@ -1,29 +1,31 @@
+@use '/src/styles/_variables.scss' as *;
+
 h1,
 h2 {
-    font-family: var(--heading);
-    font-weight: 500;
-    color: var(--text-h);
+    font-family: $font-heading;
+    font-weight: $font-weight-medium;
+    color: $text-h;
 }
 
 h1 {
-    font-size: 56px;
+    font-size: $font-size-xxl;
     letter-spacing: -1.68px;
-    margin: 32px 0;
+    margin: $space-xl 0;
 
     @media (max-width: 1024px) {
-        font-size: 36px;
-        margin: 20px 0;
+        font-size: $font-size-xl;
+        margin: $space-lg 0;
     }
 }
 
 h2 {
-    font-size: 24px;
+    font-size: $font-size-lg;
     line-height: 118%;
     letter-spacing: -0.24px;
-    margin: 0 0 8px;
+    margin: 0 0 $space-xs;
 
     @media (max-width: 1024px) {
-        font-size: 20px;
+        font-size: $font-size-md;
     }
 }
 

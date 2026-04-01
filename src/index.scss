@@ -1,18 +1,14 @@
-@use './styles/variables';
-@use './styles/base/globals';
-@use './styles/utilities/utilities';
-
 code,
 .counter {
-    font-family: var(--mono);
+    font-family: $font-mono;
     display: inline-flex;
     border-radius: 4px;
-    color: var(--text-h);
+    color: $text-h;
 }
 
 code {
     font-size: 15px;
     line-height: 135%;
     padding: 4px 8px;
-    background: var(--code-bg);
+    // background: $code-bg;
 }

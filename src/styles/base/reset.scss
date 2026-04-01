@@ -1,3 +1,5 @@
+@use '/src/styles/_variables.scss' as *;
+
 *,
 *::before,
 *::after {
@@ -6,8 +8,15 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
+    background-color: $bg;
+    color: $text;
+    font-family: $font-sans;
 }
 
 img {
@@ -19,8 +28,20 @@ img {
 button {
     font-family: inherit;
     cursor: pointer;
+    border: none;
+    background: none;
 }
+a {
+    color: $accent;
+    text-decoration: none;
+    transition: $transition-fast;
 
-html {
-    scroll-behavior: smooth;
+    &:hover {
+        color: $accent-hover;
+    }
+
+    &:active {
+        color: $accent-active;
+        opacity: 0.8;
+    }
 }

@@ -2,12 +2,17 @@
 @use './typography';
 
 body {
-    font-family: var(--sans);
-    color: var(--text);
-    background: var(--bg);
-}
+    font: 18px/145% $font-sans;
+    letter-spacing: 0.18px;
+    color: $text;
+    background: $bg;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 
-/* Dark mode específico para iconos sociales */
+    @media (max-width: 1024px) {
+        font-size: 16px;
+    }
+}
 @media (prefers-color-scheme: dark) {
     #social .button-icon {
         filter: invert(1) brightness(2);

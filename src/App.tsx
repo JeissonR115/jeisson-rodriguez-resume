@@ -1,13 +1,16 @@
 import './App.scss';
 import heroImg from './assets/hero.png';
+import { useTheme } from './context/theme/useTheme';
 
 function App() {
+    const { toggle } = useTheme();
+
     return (
         <main>
             {/* HERO / PRESENTACIÓN */}
             <section className="hero container">
                 <div className="hero__content">
-                    <h1>
+                    <h1 onClick={() => toggle()}>
                         Hola, soy{' '}
                         <span className="accent">Jeisson Rodriguez</span>
                     </h1>
