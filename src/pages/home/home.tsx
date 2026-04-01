@@ -15,11 +15,7 @@ function Home() {
             {/* HERO */}
             <section className="hero container">
                 <div className="hero__content">
-                    <h1
-                        onClick={() => {
-                            toggleTheme();
-                        }}
-                    >
+                    <h1 onClick={toggleTheme}>
                         {hero.greeting}{' '}
                         <span className="accent">{hero.name}</span>
                     </h1>
