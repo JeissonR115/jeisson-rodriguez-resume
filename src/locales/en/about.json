@@ -1,0 +1,42 @@
+{
+    "hero": {
+        "title": "About me",
+        "subtitle": "Developer passionate about clean architecture and scalable solutions."
+    },
+    "experience": {
+        "title": "Experience",
+        "items": [
+            {
+                "role": "Software Developer",
+                "company": "Company ABC",
+                "period": "2022 - present",
+                "description": "REST API development, database maintenance and microservices architecture."
+            },
+            {
+                "role": "Frontend Developer",
+                "company": "Startup XYZ",
+                "period": "2020 - 2022",
+                "description": "Building interfaces with React and TypeScript, performance optimization."
+            }
+        ]
+    },
+    "education": {
+        "title": "Education",
+        "items": [
+            {
+                "degree": "Systems Engineering",
+                "institution": "National University",
+                "period": "2016 - 2021"
+            }
+        ]
+    },
+    "values": {
+        "title": "Values",
+        "items": [
+            "Clean code",
+            "Continuous learning",
+            "Teamwork",
+            "Accountability"
+        ]
+    }
+}

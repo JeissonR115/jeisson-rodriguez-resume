@@ -1,0 +1,27 @@
+{
+    "hero": {
+        "greeting": "Hola, soy",
+        "name": "Jeisson Rodriguez",
+        "subtitle": "Software Developer enfocado en construir sistemas escalables, arquitectura limpia y soluciones eficientes.",
+        "actions": [
+            {
+                "label": "Ver proyectos",
+                "href": "#projects",
+                "variant": "primary"
+            },
+            { "label": "Contacto", "href": "#contact", "variant": "secondary" }
+        ]
+    },
+    "about": {
+        "title": "Sobre mí",
+        "description": "Soy desarrollador de software con experiencia en desarrollo web, arquitectura de sistemas y optimización de procesos."
+    },
+    "skills": {
+        "title": "Habilidades",
+        "items": ["React", "TypeScript", ".NET", "SQL Server"]
+    },
+    "contact": {
+        "title": "Contacto",
+        "description": "Puedes encontrarme en:"
+    }
+}

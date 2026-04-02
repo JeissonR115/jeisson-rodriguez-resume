@@ -1,0 +1,42 @@
+{
+    "hero": {
+        "title": "Sobre mí",
+        "subtitle": "Desarrollador apasionado por la arquitectura limpia y las soluciones escalables."
+    },
+    "experience": {
+        "title": "Experiencia",
+        "items": [
+            {
+                "role": "Software Developer",
+                "company": "Empresa ABC",
+                "period": "2022 - presente",
+                "description": "Desarrollo de APIs REST, mantenimiento de bases de datos y arquitectura de microservicios."
+            },
+            {
+                "role": "Frontend Developer",
+                "company": "Startup XYZ",
+                "period": "2020 - 2022",
+                "description": "Construcción de interfaces con React y TypeScript, optimización de rendimiento."
+            }
+        ]
+    },
+    "education": {
+        "title": "Educación",
+        "items": [
+            {
+                "degree": "Ingeniería de Sistemas",
+                "institution": "Universidad Nacional",
+                "period": "2016 - 2021"
+            }
+        ]
+    },
+    "values": {
+        "title": "Valores",
+        "items": [
+            "Código limpio",
+            "Aprendizaje continuo",
+            "Trabajo en equipo",
+            "Responsabilidad"
+        ]
+    }
+}

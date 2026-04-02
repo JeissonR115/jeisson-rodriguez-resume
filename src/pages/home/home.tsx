@@ -1,14 +1,16 @@
+import { useTranslation } from 'react-i18next';
 import heroImg from '../../assets/hero.png';
-import config from '../../config/pages/home.json';
-import socialConfig from '../../config/social.json';
-import { useLanguage } from '../../context/language/useLanguage';
 import { useTheme } from '../../context/theme/useTheme';
-import { usePageConfig } from '../../hooks/usePageConfig';
+
+type Action = { label: string; href: string; variant: string };
 
 function Home() {
     const { toggle: toggleTheme } = useTheme();
-    const { toggle: toggleLanguage } = useLanguage();
-    const { hero, about, skills, contact } = usePageConfig(config);
+    const { t, i18n } = useTranslation('home');
+    const toggleLanguage = () =>
+        i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
+
+    const actions = t('hero.actions', { returnObjects: true }) as Action[];
 
     return (
         <main>
@@ -16,12 +18,12 @@ function Home() {
             <section className="hero container">
                 <div className="hero__content">
                     <h1 onClick={toggleTheme}>
-                        {hero.greeting}{' '}
-                        <span className="accent">{hero.name}</span>
+                        {t('hero.greeting')}{' '}
+                        <span className="accent">{t('hero.name')}</span>
                     </h1>
-                    <p className="hero__subtitle">{hero.subtitle}</p>
+                    <p className="hero__subtitle">{t('hero.subtitle')}</p>
                     <div className="hero__actions">
-                        {hero.actions.map((action) => (
+                        {actions.map((action) => (
                             <a
                                 key={action.href}
                                 href={action.href}
@@ -33,21 +35,23 @@ function Home() {
                     </div>
                 </div>
                 <div className="hero__image" onClick={toggleLanguage}>
-                    <img src={heroImg} alt={hero.name} />
+                    <img src={heroImg} alt={t('hero.name')} />
                 </div>
             </section>
 
             {/* ABOUT */}
             <section className="about container">
-                <h2>{about.title}</h2>
-                <p>{about.description}</p>
+                <h2>{t('about.title')}</h2>
+                <p>{t('about.description')}</p>
             </section>
 
             {/* SKILLS */}
             <section className="skills container">
-                <h2>{skills.title}</h2>
+                <h2>{t('skills.title')}</h2>
                 <div className="skills__list">
-                    {skills.items.map((skill) => (
+                    {(
+                        t('skills.items', { returnObjects: true }) as string[]
+                    ).map((skill) => (
                         <span key={skill}>{skill}</span>
                     ))}
                 </div>
@@ -55,10 +59,10 @@ function Home() {
 
             {/* CONTACT */}
             <section id="contact" className="contact container">
-                <h2>{contact.title}</h2>
-                <p>{contact.description}</p>
+                <h2>{t('contact.title')}</h2>
+                <p>{t('contact.description')}</p>
                 <div className="contact__links">
-                    {socialConfig.links.map((link) => (
+                    {/* {socialConfig.links.map((link) => (
                         <a
                             key={link.href}
                             href={link.href}
@@ -67,7 +71,7 @@ function Home() {
                         >
                             {link.label}
                         </a>
-                    ))}
+                    ))} */}
                 </div>
             </section>
         </main>
