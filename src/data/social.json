@@ -1,0 +1,15 @@
+{
+    "links": [
+        {
+            "label": "GitHub",
+            "href": "https://github.com/jeisson-rodriguez",
+            "icon": "github"
+        },
+        {
+            "label": "LinkedIn",
+            "href": "https://linkedin.com/in/jeisson-rodriguez",
+            "icon": "linkedin"
+        },
+        { "label": "Email", "href": "mailto:jeisson@email.com", "icon": "mail" }
+    ]
+}

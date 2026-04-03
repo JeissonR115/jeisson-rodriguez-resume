@@ -3,6 +3,11 @@ import react, { reactCompilerPreset } from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+    resolve: {
+        alias: {
+            '@': '/src',
+        },
+    },
     plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
     css: {
         preprocessorOptions: {

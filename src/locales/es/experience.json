@@ -1,0 +1,10 @@
+{
+    "title": "Experience",
+    "present": "Present",
+    "items": {
+        "mectronics": {
+            "role": "Software Developer",
+            "description": "Participation in development and maintenance of web applications. Working with React, TypeScript, .NET and SQL Server. Support in implementing new features, bug fixing and optimization of inventory and purchasing processes."
+        }
+    }
+}

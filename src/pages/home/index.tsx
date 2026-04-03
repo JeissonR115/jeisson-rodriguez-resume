@@ -1,14 +1,22 @@
+import heroImg from '@/assets/hero.png';
+import { useTheme } from '@/context/theme/useTheme';
+import socialConfig from '@/data/social.json';
+import type { Language } from '@/locales/types';
 import { useTranslation } from 'react-i18next';
-import heroImg from '../../assets/hero.png';
-import { useTheme } from '../../context/theme/useTheme';
 
 type Action = { label: string; href: string; variant: string };
 
 function Home() {
     const { toggle: toggleTheme } = useTheme();
     const { t, i18n } = useTranslation('home');
-    const toggleLanguage = () =>
-        i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
+
+    const languages = Object.keys(i18n.options.resources!) as Language[];
+
+    const toggleLanguage = () => {
+        const current = languages.indexOf(i18n.language as Language);
+        const next = languages[(current + 1) % languages.length];
+        i18n.changeLanguage(next);
+    };
 
     const actions = t('hero.actions', { returnObjects: true }) as Action[];
 
@@ -62,7 +70,7 @@ function Home() {
                 <h2>{t('contact.title')}</h2>
                 <p>{t('contact.description')}</p>
                 <div className="contact__links">
-                    {/* {socialConfig.links.map((link) => (
+                    {socialConfig.links.map((link) => (
                         <a
                             key={link.href}
                             href={link.href}
@@ -71,7 +79,7 @@ function Home() {
                         >
                             {link.label}
                         </a>
-                    ))} */}
+                    ))}
                 </div>
             </section>
         </main>

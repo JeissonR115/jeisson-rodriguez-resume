@@ -1,0 +1,24 @@
+{
+    "title": "Habilidades",
+    "technical": {
+        "title": "Habilidades Técnicas",
+        "categories": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "databases": "Bases de datos",
+            "vcs": "Control de versiones",
+            "tools": "Herramientas",
+            "testing": "Pruebas"
+        }
+    },
+    "soft": {
+        "title": "Habilidades Blandas",
+        "items": [
+            "Aprendizaje continuo",
+            "Adaptabilidad al cambio",
+            "Trabajo en equipo",
+            "Comunicación efectiva",
+            "Resolución de problemas"
+        ]
+    }
+}

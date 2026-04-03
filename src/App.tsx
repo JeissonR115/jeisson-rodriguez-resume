@@ -1,10 +1,14 @@
-import Home from './pages/home/home';
+import Footer from '@/components/layout/footer';
+import Header from '@/components/layout/header';
+import { Outlet } from 'react-router-dom';
 
 function App() {
     return (
-        <main>
-            <Home />
-        </main>
+        <>
+            <Header />
+            <Outlet />
+            <Footer />
+        </>
     );
 }
 

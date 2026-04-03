@@ -1,0 +1,27 @@
+{
+    "title": "Educación",
+    "certificationsTitle": "Certificados & Cursos",
+    "present": "Presente",
+    "degrees": {
+        "software-engineering": {
+            "degree": "Ingeniería en Desarrollo de Software"
+        }
+    },
+    "certifications": {
+        "mision-tic": { "name": "Misión TIC" },
+        "platzi": { "name": "Platzi Cursos" }
+    },
+    "languages": {
+        "title": "Idiomas",
+        "names": {
+            "spanish": "Español",
+            "english": "Inglés"
+        },
+        "levels": {
+            "native": "Nativo",
+            "B2": "Intermedio (B2)",
+            "B1": "Pre-intermedio (B1)",
+            "A2": "Básico (A2)"
+        }
+    }
+}

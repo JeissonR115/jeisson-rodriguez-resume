@@ -1,0 +1,16 @@
+{
+    "items": [
+        {
+            "id": "portfolio",
+            "tech": ["React", "TypeScript", "SCSS"],
+            "href": "https://github.com/jeisson-rodriguez/portfolio",
+            "image": "portfolio.png"
+        },
+        {
+            "id": "api-rest",
+            "tech": [".NET", "SQL Server"],
+            "href": "https://github.com/jeisson-rodriguez/api-rest",
+            "image": "api.png"
+        }
+    ]
+}

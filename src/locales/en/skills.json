@@ -1,0 +1,24 @@
+{
+    "title": "Skills",
+    "technical": {
+        "title": "Technical Skills",
+        "categories": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "databases": "Databases",
+            "vcs": "Version Control",
+            "tools": "Tools",
+            "testing": "Testing"
+        }
+    },
+    "soft": {
+        "title": "Soft Skills",
+        "items": [
+            "Continuous learning",
+            "Adaptability to change",
+            "Teamwork",
+            "Effective communication",
+            "Problem-solving"
+        ]
+    }
+}
