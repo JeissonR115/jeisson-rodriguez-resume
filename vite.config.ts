@@ -3,6 +3,7 @@ import react, { reactCompilerPreset } from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+    base: '/jeisson-rodriguez-resume/',
     resolve: {
         alias: {
             '@': '/src',
