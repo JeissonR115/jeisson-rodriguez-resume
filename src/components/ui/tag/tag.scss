@@ -1,0 +1,22 @@
+@use '/src/styles/_variables.scss' as *;
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: $space-xs $space-sm;
+    border-radius: $radius-sm;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    white-space: nowrap;
+
+    &--default {
+        background: $accent-bg;
+        color: $text;
+        border: 1px solid $accent-border;
+    }
+
+    &--accent {
+        background: $color-primary;
+        color: var(--color-white);
+    }
+}

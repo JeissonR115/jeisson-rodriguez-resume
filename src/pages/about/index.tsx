@@ -5,12 +5,12 @@ import { SkillsSection } from './SkillsSection';
 
 function About() {
     return (
-        <main>
+        <>
             <AboutSection />
             <ExperienceSection />
             <EducationSection />
             <SkillsSection />
-        </main>
+        </>
     );
 }
 

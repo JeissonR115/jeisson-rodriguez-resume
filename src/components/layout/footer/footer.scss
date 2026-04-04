@@ -1,0 +1,26 @@
+@use '/src/styles/_variables.scss' as *;
+
+.footer {
+    border-top: 1px solid $accent-border;
+    background: $bg;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 56px;
+    }
+
+    &__copy {
+        font-size: $font-size-sm;
+        color: $text;
+        font-family: $font-mono;
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        gap: $space-xs;
+        list-style: none;
+    }
+}

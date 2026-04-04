@@ -1,3 +1,4 @@
+import Tag from '@/components/ui/tag';
 import profile from '@/data/profile.json';
 import { typedEntries } from '@/helpers/typedEntries';
 import type { AppResources } from '@/locales/types';
@@ -26,9 +27,7 @@ export function SkillsSection() {
                     <h4>{t(`technical.categories.${category}`)}</h4>
                     <div className="skills__list">
                         {items.map((skill) => (
-                            <span key={skill} className="skills__item">
-                                {skill}
-                            </span>
+                            <Tag key={skill} label={skill} variant="accent" />
                         ))}
                     </div>
                 </div>
@@ -37,9 +36,7 @@ export function SkillsSection() {
             <h3>{t('soft.title')}</h3>
             <div className="skills__list">
                 {softSkills.map((skill) => (
-                    <span key={skill} className="skills__item">
-                        {skill}
-                    </span>
+                    <Tag key={skill} label={skill} variant="accent" />
                 ))}
             </div>
         </section>
