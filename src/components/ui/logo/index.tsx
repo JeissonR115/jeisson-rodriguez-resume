@@ -4,11 +4,14 @@ type LogoSize = 'sm' | 'md' | 'lg';
 
 type LogoProps = {
     size?: LogoSize;
+    collapsed?: boolean;
 };
 
-function Logo({ size = 'md' }: LogoProps) {
+function Logo({ size = 'md', collapsed = false }: LogoProps) {
     return (
-        <span className={`logo logo--${size}`}>
+        <span
+            className={`logo logo--${size} ${collapsed ? 'logo--collapsed' : ''}`}
+        >
             <span className="logo-bracket">{'{'}</span>
             <span className="logo-name">
                 <span className="logo-j">J</span>

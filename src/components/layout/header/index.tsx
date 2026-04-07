@@ -14,6 +14,11 @@ function Header() {
     const { theme, toggle: toggleTheme } = useTheme();
     const [menuOpen, setMenuOpen] = useState(false);
 
+    const navLinks = [
+        { to: '/', label: t('home') },
+        { to: '/about', label: t('about') },
+        { to: '/projects', label: t('projects') },
+    ] as const;
     const languages = Object.keys(i18n.options.resources!) as Language[];
     const toggleLanguage = () => {
         const current = languages.indexOf(i18n.language as Language);
@@ -27,26 +32,31 @@ function Header() {
         <header className="header">
             <nav className="header__nav container">
                 <NavLink to="/" onClick={closeMenu}>
-                    <Logo />
+                    <Logo collapsed={menuOpen} />
                 </NavLink>
 
                 <ul
                     className={`header__links ${menuOpen ? 'header__links--open' : ''}`}
                 >
-                    <li>
-                        <NavLink to="/" end onClick={closeMenu}>
-                            {t('home')}
-                        </NavLink>
+                    <li className="header__links-bracket header__links-bracket--open">
+                        {'{'}
                     </li>
-                    <li>
-                        <NavLink to="/about" onClick={closeMenu}>
-                            {t('about')}
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/projects" onClick={closeMenu}>
-                            {t('projects')}
-                        </NavLink>
+                    {navLinks.map(({ to, label }, i) => (
+                        <li key={to}>
+                            <NavLink
+                                to={to}
+                                end={to === '/'}
+                                onClick={closeMenu}
+                            >
+                                {label}
+                                {i < navLinks.length - 1 && (
+                                    <span className="header__comma">,</span>
+                                )}
+                            </NavLink>
+                        </li>
+                    ))}
+                    <li className="header__links-bracket header__links-bracket--close">
+                        {'}'}
                     </li>
                 </ul>
 

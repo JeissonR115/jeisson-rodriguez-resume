@@ -19,6 +19,17 @@
         font-size: $font-size-xxl;
     }
 
+    &--collapsed {
+        .logo-eis {
+            max-width: 0;
+            opacity: 0;
+        }
+
+        .logo-bracket {
+            color: $accent-hover;
+        }
+    }
+
     &-bracket {
         color: $color-primary;
         transition: color $transition-normal;
