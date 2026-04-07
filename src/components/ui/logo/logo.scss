@@ -6,6 +6,18 @@
     align-items: center;
     gap: 1px;
     cursor: pointer;
+    width: 9.5ch;
+    justify-content: center;
+
+    &--sm {
+        font-size: $font-size-md;
+    }
+    &--md {
+        font-size: $font-size-lg;
+    }
+    &--lg {
+        font-size: $font-size-xxl;
+    }
 
     &-bracket {
         color: $color-primary;

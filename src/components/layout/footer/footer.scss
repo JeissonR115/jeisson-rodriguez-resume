@@ -3,6 +3,7 @@
 .footer {
     border-top: 1px solid $accent-border;
     background: $bg;
+    padding: 0 $space-lg;
 
     &__inner {
         display: flex;

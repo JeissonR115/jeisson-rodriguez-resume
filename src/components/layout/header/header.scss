@@ -1,6 +1,7 @@
 @use '/src/styles/_variables.scss' as *;
 
 .header {
+    padding: 0 $space-lg;
     position: sticky;
     top: 0;
     z-index: $z-dropdown;

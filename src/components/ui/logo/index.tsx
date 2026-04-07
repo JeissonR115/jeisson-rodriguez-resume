@@ -1,8 +1,14 @@
 import './logo.scss';
 
-function Logo() {
+type LogoSize = 'sm' | 'md' | 'lg';
+
+type LogoProps = {
+    size?: LogoSize;
+};
+
+function Logo({ size = 'md' }: LogoProps) {
     return (
-        <span className="logo">
+        <span className={`logo logo--${size}`}>
             <span className="logo-bracket">{'{'}</span>
             <span className="logo-name">
                 <span className="logo-j">J</span>
@@ -13,4 +19,5 @@ function Logo() {
         </span>
     );
 }
+
 export default Logo;

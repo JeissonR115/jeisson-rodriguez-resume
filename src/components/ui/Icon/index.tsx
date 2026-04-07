@@ -28,7 +28,7 @@ function Icon({ id, size = 'md', className = '', label }: IconProps) {
             aria-label={label}
             role={label ? 'img' : undefined}
         >
-            <use href={`/icons.svg#${id}-icon`} />
+            <use href={`${import.meta.env.BASE_URL}icons.svg#${id}-icon`} />
         </svg>
     );
 }

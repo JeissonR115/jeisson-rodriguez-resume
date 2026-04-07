@@ -3,7 +3,7 @@
 .icon {
     display: inline-flex;
     flex-shrink: 0;
-    color: currentColor;
+    color: inherit;
 
     &--sm {
         width: 16px;
