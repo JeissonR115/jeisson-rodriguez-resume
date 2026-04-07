@@ -1,8 +1,10 @@
 import Button from '@/components/ui/button';
-import Icon from '@/components/ui/Icon';
+import { iconSizes } from '@/components/ui/Icon/icon.type';
 import Logo from '@/components/ui/logo';
 import { useTheme } from '@/context/theme/useTheme';
 import type { Language } from '@/locales/types';
+import { Menu, Moon, Sun, X } from 'lucide-react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import './header.scss';
@@ -10,6 +12,7 @@ import './header.scss';
 function Header() {
     const { t, i18n } = useTranslation('nav');
     const { theme, toggle: toggleTheme } = useTheme();
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const languages = Object.keys(i18n.options.resources!) as Language[];
     const toggleLanguage = () => {
@@ -18,24 +21,32 @@ function Header() {
         i18n.changeLanguage(next);
     };
 
+    const closeMenu = () => setMenuOpen(false);
+
     return (
         <header className="header">
             <nav className="header__nav container">
-                <NavLink to="/" className="header__logo">
+                <NavLink to="/" onClick={closeMenu}>
                     <Logo />
                 </NavLink>
 
-                <ul className="header__links">
+                <ul
+                    className={`header__links ${menuOpen ? 'header__links--open' : ''}`}
+                >
                     <li>
-                        <NavLink to="/" end>
+                        <NavLink to="/" end onClick={closeMenu}>
                             {t('home')}
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/about">{t('about')}</NavLink>
+                        <NavLink to="/about" onClick={closeMenu}>
+                            {t('about')}
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/projects">{t('projects')}</NavLink>
+                        <NavLink to="/projects" onClick={closeMenu}>
+                            {t('projects')}
+                        </NavLink>
                     </li>
                 </ul>
 
@@ -48,18 +59,38 @@ function Header() {
                         size="sm"
                         iconOnly
                         icon={
-                            <Icon
-                                id={theme === 'dark' ? 'sun' : 'moon'}
-                                size="sm"
-                            />
+                            theme === 'dark' ? (
+                                <Sun size={iconSizes.sm} />
+                            ) : (
+                                <Moon size={iconSizes.sm} />
+                            )
                         }
                         onClick={toggleTheme}
                         aria-label={
                             theme === 'dark' ? 'Light mode' : 'Dark mode'
                         }
                     />
+                    <Button
+                        className="header__hamburger"
+                        variant="ghost"
+                        size="sm"
+                        iconOnly
+                        icon={
+                            menuOpen ? (
+                                <X size={iconSizes.sm} />
+                            ) : (
+                                <Menu size={iconSizes.sm} />
+                            )
+                        }
+                        onClick={() => setMenuOpen((o) => !o)}
+                        aria-label="Menu"
+                    />
                 </div>
             </nav>
+
+            {menuOpen && (
+                <div className="header__overlay" onClick={closeMenu} />
+            )}
         </header>
     );
 }

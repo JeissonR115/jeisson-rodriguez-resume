@@ -1,7 +1,5 @@
 import './icon.scss';
-import type { IconId } from './icon.type';
-
-export type IconSize = 'sm' | 'md' | 'lg';
+import { iconSizes, type IconId, type IconSize } from './icon.type';
 
 type IconProps = {
     id: IconId;
@@ -10,14 +8,8 @@ type IconProps = {
     label?: string;
 };
 
-const sizes: Record<IconSize, number> = {
-    sm: 16,
-    md: 20,
-    lg: 24,
-};
-
 function Icon({ id, size = 'md', className = '', label }: IconProps) {
-    const px = sizes[size];
+    const px = iconSizes[size];
 
     return (
         <svg

@@ -1,7 +1,6 @@
 @use '/src/styles/_variables.scss' as *;
 
 .header {
-    padding: 0 $space-lg;
     position: sticky;
     top: 0;
     z-index: $z-dropdown;
@@ -14,18 +13,7 @@
         align-items: center;
         justify-content: space-between;
         height: 64px;
-    }
-
-    &__logo {
-        font-family: $font-mono;
-        font-weight: $font-weight-bold;
-        font-size: $font-size-lg;
-        color: $color-primary;
-        text-decoration: none;
-
-        &:hover {
-            color: $accent-hover;
-        }
+        padding: 0 $space-lg;
     }
 
     &__links {
@@ -43,7 +31,6 @@
             &:hover {
                 color: $color-primary;
             }
-
             &.active {
                 color: $color-primary;
                 font-weight: $font-weight-bold;
@@ -55,5 +42,56 @@
         display: flex;
         align-items: center;
         gap: $space-sm;
+    }
+
+    &__hamburger {
+        display: none;
+    }
+
+    &__overlay {
+        position: fixed;
+        inset: 0;
+        top: 64px;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: $z-dropdown - 1;
+    }
+
+    @media (max-width: 768px) {
+        &__hamburger {
+            display: inline-flex;
+        }
+
+        &__links {
+            display: none;
+            position: absolute;
+            top: 64px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            background: $bg;
+            border-bottom: 1px solid $accent-border;
+            z-index: $z-dropdown;
+            padding: $space-sm 0;
+
+            &--open {
+                display: flex;
+            }
+
+            li {
+                width: 100%;
+            }
+
+            a {
+                display: block;
+                padding: $space-md $space-lg;
+                width: 100%;
+
+                &:hover {
+                    background: $accent-bg;
+                }
+            }
+        }
     }
 }
