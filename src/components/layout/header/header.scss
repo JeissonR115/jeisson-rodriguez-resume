@@ -7,7 +7,7 @@
     background: $bg;
     border-bottom: 1px solid $accent-border;
     backdrop-filter: blur(8px);
-
+    font-family: $font-mono;
     &__nav {
         display: flex;
         align-items: center;
@@ -63,7 +63,6 @@
     }
     &__comma {
         color: $color-primary-light;
-        font-family: $font-mono;
     }
 
     // ─── Mobile ──────────────────────────────────────
@@ -109,7 +108,6 @@
         &__links-bracket {
             display: block;
             color: $color-primary-light;
-            font-family: $font-mono;
             font-weight: $font-weight-bold;
             font-size: $font-size-lg;
             padding: $space-xs $space-lg;

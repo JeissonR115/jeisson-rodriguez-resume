@@ -19,7 +19,7 @@ function Home() {
             <div className="hero__content">
                 <h1>
                     {tHome('hero.greeting')}{' '}
-                    <span className="accent">{profile.name}</span>
+                    <span className="accent">{profile.name + '</>'}</span>
                 </h1>
                 <Button variant="secondary">{tHome('hero.greeting')}</Button>
 
