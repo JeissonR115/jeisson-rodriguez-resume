@@ -1,0 +1,50 @@
+@use '/src/styles/_variables.scss' as *;
+
+.toc {
+    position: sticky;
+    top: 84px;
+    max-height: calc(100vh - 84px);
+    overflow-y: auto;
+    padding: $space-md 0;
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: $space-xs;
+    }
+
+    &__item {
+        a {
+            display: block;
+            font-size: $font-size-sm;
+            color: $text;
+            text-decoration: none;
+            padding: $space-xs $space-sm;
+            border-left: 2px solid transparent;
+            border-radius: 0 $radius-sm $radius-sm 0;
+            transition:
+                color $transition-fast,
+                border-color $transition-fast,
+                background $transition-fast;
+
+            &:hover {
+                color: $color-primary;
+                background: $accent-bg;
+            }
+        }
+
+        &--h3 a {
+            padding-left: $space-lg;
+        }
+        &--h4 a {
+            padding-left: $space-xl;
+        }
+
+        &--active a {
+            color: $color-primary;
+            border-left-color: $color-primary;
+            font-weight: $font-weight-medium;
+        }
+    }
+}
