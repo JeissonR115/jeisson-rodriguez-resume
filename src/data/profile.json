@@ -26,6 +26,12 @@
             "company": "Mectronics",
             "start": "2024-12",
             "end": null
+        },
+        {
+            "id": "ambidata-pia",
+            "company": "UNINPAHU",
+            "start": "2024-01",
+            "end": "2024-06"
         }
     ],
     "skills": {

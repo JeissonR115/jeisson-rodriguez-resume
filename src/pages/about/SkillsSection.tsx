@@ -4,6 +4,8 @@ import { typedEntries } from '@/helpers/typedEntries';
 import type { AppResources } from '@/locales/types';
 import { useTranslation } from 'react-i18next';
 
+import './skillsSection.scss';
+
 type SkillsT = AppResources['skills'];
 
 type SkillCategoryId = keyof SkillsT['technical']['categories'];

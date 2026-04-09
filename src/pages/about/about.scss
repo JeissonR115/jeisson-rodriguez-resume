@@ -1,0 +1,14 @@
+.about,
+.experience,
+.education,
+.skills {
+    padding: $space-xl 0;
+
+    & + & {
+        border-top: 1px solid $accent-border;
+    }
+
+    h2 {
+        margin-bottom: $space-lg;
+    }
+}

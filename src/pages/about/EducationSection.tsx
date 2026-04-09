@@ -1,6 +1,7 @@
 import profile from '@/data/profile.json';
 import type { AppResources } from '@/locales/types';
 import { useTranslation } from 'react-i18next';
+import './educationSection.scss';
 
 type EducationT = AppResources['education'];
 

@@ -1,10 +1,24 @@
 {
-    "title": "Experiencia",
-    "present": "Presente",
+    "title": "Experience",
+    "present": "Present",
     "items": {
         "mectronics": {
             "role": "Software Developer",
-            "description": "Participación en proyectos de desarrollo y mantenimiento de aplicaciones web. Trabajo con tecnologías como React, TypeScript, .NET y SQL Server. Apoyo en la implementación de nuevas funcionalidades, corrección de errores y optimización de procesos relacionados con inventario y compras."
+            "description": "Participated in the development and maintenance of web applications. Worked with technologies such as React, TypeScript, .NET, and SQL Server. Contributed to implementing new features, fixing bugs, and optimizing processes related to inventory and purchasing.",
+            "worksTitle": "Projects",
+            "works": [
+                "Web and mobile application for inventory management and fleet control",
+                "Application for managing judicial processes in concession companies"
+            ]
+        },
+        "ambidata-pia": {
+            "role": "University Project",
+            "description": "Environmental monitoring system using ESP32 to collect temperature and humidity data. Real-time data visualization through web-based charts, focused on crop monitoring.",
+            "worksTitle": "Technologies",
+            "works": [
+                "ESP32 for data collection",
+                "Web dashboard with real-time charts"
+            ]
         }
     }
 }

@@ -1,0 +1,30 @@
+.skills {
+    h3 {
+        font-size: $font-size-md;
+        font-weight: $font-weight-bold;
+        color: $text-strong;
+        margin: $space-lg 0 $space-md;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    &__group {
+        margin-bottom: $space-lg;
+
+        h4 {
+            font-size: $font-size-sm;
+            font-weight: $font-weight-medium;
+            color: $color-primary;
+            font-family: $font-mono;
+            margin-bottom: $space-sm;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $space-sm;
+    }
+}
