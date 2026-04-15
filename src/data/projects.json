@@ -4,13 +4,13 @@
             "id": "portfolio",
             "tech": ["React", "TypeScript", "SCSS"],
             "href": "https://github.com/jeisson-rodriguez/portfolio",
-            "image": "portfolio.png"
+            "images": []
         },
         {
             "id": "api-rest",
             "tech": [".NET", "SQL Server"],
             "href": "https://github.com/jeisson-rodriguez/api-rest",
-            "image": "api.png"
+            "images": ["api.png", "api-2.png"]
         }
     ]
 }
