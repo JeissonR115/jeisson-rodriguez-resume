@@ -25,8 +25,8 @@ function Home() {
                     {actions.map((action) => (
                         <Button
                             key={action.href}
-                            as="a"
-                            href={action.href}
+                            as="link"
+                            to={action.href}
                             variant={
                                 isVariant(action.variant)
                                     ? action.variant
