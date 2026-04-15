@@ -2,14 +2,18 @@
     "links": [
         {
             "label": "GitHub",
-            "href": "https://github.com/jeisson-rodriguez",
+            "href": "https://github.com/jeissonr115",
             "icon": "github"
         },
         {
             "label": "LinkedIn",
-            "href": "https://linkedin.com/in/jeisson-rodriguez",
+            "href": "https://linkedin.com/in/jeissonr115",
             "icon": "linkedin"
         },
-        { "label": "Email", "href": "mailto:jeisson@email.com", "icon": "mail" }
+        {
+            "label": "Email",
+            "href": "mailto:jeissonfeliper@gmail.com",
+            "icon": "mail"
+        }
     ]
 }

@@ -1,9 +1,10 @@
 import heroImg from '@/assets/hero.png';
 import Button from '@/components/ui/button';
+import { isVariant } from '@/components/ui/button/button.utils';
 import profile from '@/data/profile.json';
 import type { AppResources } from '@/locales/types';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import './home.scss';
 
 type HomeT = AppResources['home'];
 type Action = HomeT['hero']['actions'][number];
@@ -11,28 +12,29 @@ type Action = HomeT['hero']['actions'][number];
 function Home() {
     const { t: tHome } = useTranslation('home');
     const { t: tAbout } = useTranslation('about');
-
     const actions = tHome('hero.actions', { returnObjects: true }) as Action[];
 
     return (
         <section className="hero container">
             <div className="hero__content">
-                <h1>
-                    {tHome('hero.greeting')}{' '}
-                    <span className="accent">{profile.name + '</>'}</span>
-                </h1>
-                <Button variant="secondary">{tHome('hero.greeting')}</Button>
-
+                <p className="hero__greeting">{tHome('hero.greeting')}</p>
+                <h1 className="hero__name">{profile.name}</h1>
+                <p className="hero__role">{tAbout('role')}</p>
                 <p className="hero__subtitle">{tAbout('summary')}</p>
                 <div className="hero__actions">
                     {actions.map((action) => (
-                        <Link
+                        <Button
                             key={action.href}
-                            to={action.href}
-                            className={`btn ${action.variant}`}
+                            as="a"
+                            href={action.href}
+                            variant={
+                                isVariant(action.variant)
+                                    ? action.variant
+                                    : 'secondary'
+                            }
                         >
                             {action.label}
-                        </Link>
+                        </Button>
                     ))}
                 </div>
             </div>

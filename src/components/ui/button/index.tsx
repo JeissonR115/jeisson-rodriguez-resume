@@ -1,4 +1,10 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import {
+    Link,
+    NavLink,
+    type LinkProps,
+    type NavLinkProps,
+} from 'react-router-dom';
 import './button.scss';
 
 type BaseProps = {
@@ -11,11 +17,16 @@ type BaseProps = {
 
 type ButtonAsButton = BaseProps &
     ButtonHTMLAttributes<HTMLButtonElement> & { as?: 'button' };
-
 type ButtonAsAnchor = BaseProps &
     AnchorHTMLAttributes<HTMLAnchorElement> & { as: 'a' };
+type ButtonAsLink = BaseProps & LinkProps & { as: 'link' };
+type ButtonAsNavLink = BaseProps & NavLinkProps & { as: 'navlink' };
 
-type ButtonProps = ButtonAsButton | ButtonAsAnchor;
+type ButtonProps =
+    | ButtonAsButton
+    | ButtonAsAnchor
+    | ButtonAsLink
+    | ButtonAsNavLink;
 
 function Button({
     variant = 'primary',
@@ -43,6 +54,27 @@ function Button({
             {!iconOnly && children}
         </>
     );
+
+    if (Tag === 'navlink') {
+        return (
+            <NavLink
+                {...(rest as NavLinkProps)}
+                className={({ isActive }) =>
+                    `${classes} ${isActive ? 'active' : ''}`
+                }
+            >
+                {content}
+            </NavLink>
+        );
+    }
+
+    if (Tag === 'link') {
+        return (
+            <Link className={classes} {...(rest as LinkProps)}>
+                {content}
+            </Link>
+        );
+    }
 
     if (Tag === 'a') {
         return (
