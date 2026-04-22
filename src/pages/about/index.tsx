@@ -1,4 +1,4 @@
-import TableOfContents from '@/components/ui/tableOfContents/TableOfContents';
+import TableOfContents from '@/components/ui/tableOfContents';
 import { AboutSection } from './AboutSection';
 import { EducationSection } from './EducationSection';
 import { ExperienceSection } from './ExperienceSection';
