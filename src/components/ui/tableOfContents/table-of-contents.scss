@@ -2,8 +2,8 @@
 
 .toc {
     position: sticky;
-    top: 84px;
-    max-height: calc(100vh - 84px);
+    top: var(--header-height);
+    max-height: calc(100vh - var(--header-height));
     overflow-y: auto;
     padding: $space-md 0;
 
@@ -15,30 +15,38 @@
     }
 
     &__item {
+        --level-indent: 0;
+
+        &--h2 {
+            --level-indent: 0;
+        }
+        &--h3 {
+            --level-indent: 1;
+        }
+        &--h4 {
+            --level-indent: 2;
+        }
+
         a {
+            padding-left: calc(
+                #{$space-sm} + var(--level-indent) * #{$space-md}
+            );
             display: block;
             font-size: $font-size-sm;
             color: $text;
             text-decoration: none;
-            padding: $space-xs $space-sm;
             border-left: 2px solid transparent;
             border-radius: 0 $radius-sm $radius-sm 0;
             transition:
                 color $transition-fast,
                 border-color $transition-fast,
-                background $transition-fast;
+                background $transition-fast,
+                padding $transition-fast;
 
             &:hover {
                 color: $color-primary;
                 background: $accent-bg;
             }
-        }
-
-        &--h3 a {
-            padding-left: $space-lg;
-        }
-        &--h4 a {
-            padding-left: $space-xl;
         }
 
         &--active a {

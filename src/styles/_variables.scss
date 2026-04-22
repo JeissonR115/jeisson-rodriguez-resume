@@ -44,6 +44,8 @@ $theme-dark: (
 @function token($map, $key) {
     @return map.get($map, $key);
 }
+// ─── Layout ───────────────────────────────────────────────────
+$header-height: 64px;
 
 // ─── CSS Variables ────────────────────────────────────────────
 :root {
@@ -61,6 +63,8 @@ $theme-dark: (
 
     --color-black: #{map.get($palette, neutral-900)};
     --color-white: #{map.get($palette, neutral-100)};
+
+    --header-height: #{$header-height};
 }
 
 [data-theme='dark'] {
