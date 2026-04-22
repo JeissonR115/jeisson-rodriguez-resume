@@ -33,20 +33,5 @@
             "start": "2024-01",
             "end": "2024-06"
         }
-    ],
-    "skills": {
-        "technical": {
-            "frontend": [
-                "React.js",
-                "TypeScript",
-                "JavaScript",
-                "HTML",
-                "CSS",
-                "jQuery"
-            ],
-            "backend": [".NET 8", ".NET Framework", "WCF", "Web APIs"],
-            "databases": ["SQL Server"],
-            "vcs": ["Git", "GitHub"]
-        }
-    }
+    ]
 }

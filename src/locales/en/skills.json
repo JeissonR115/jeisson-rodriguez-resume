@@ -6,19 +6,20 @@
             "frontend": "Frontend",
             "backend": "Backend",
             "databases": "Databases",
-            "vcs": "Version Control",
-            "tools": "Tools",
-            "testing": "Testing"
+            "vcs": "Version Control"
         }
     },
     "soft": {
         "title": "Soft Skills",
-        "items": [
-            "Continuous learning",
-            "Adaptability to change",
-            "Teamwork",
-            "Effective communication",
-            "Problem-solving"
-        ]
+        "items": {
+            "problem-solving": "Problem Solving",
+            "critical-thinking": "Critical Thinking",
+            "teamwork": "Teamwork",
+            "communication": "Communication",
+            "adaptability": "Adaptability",
+            "time-management": "Time Management",
+            "attention-to-detail": "Attention to Detail",
+            "responsibility": "Responsibility"
+        }
     }
 }

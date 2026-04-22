@@ -1,4 +1,9 @@
+@use '/src/styles/_variables.scss' as *;
+
 .skills {
+    padding: $space-xl 0;
+    border-top: 1px solid $accent-border;
+
     h3 {
         font-size: $font-size-md;
         font-weight: $font-weight-bold;
@@ -18,13 +23,51 @@
             font-weight: $font-weight-medium;
             color: $color-primary;
             font-family: $font-mono;
-            margin-bottom: $space-sm;
+            margin-bottom: $space-md;
         }
     }
 
     &__list {
         display: flex;
-        flex-wrap: wrap;
-        gap: $space-sm;
+        flex-direction: column;
+        gap: $space-md;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: $space-xs;
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-name {
+            font-size: $font-size-sm;
+            font-weight: $font-weight-medium;
+            color: $text-strong;
+        }
+
+        &-score {
+            font-size: $font-size-sm;
+            font-family: $font-mono;
+            color: $color-primary;
+        }
+    }
+
+    &__bar {
+        height: 4px;
+        background: $accent-border;
+        border-radius: $radius-sm;
+        overflow: hidden;
+
+        &-fill {
+            height: 100%;
+            background: $color-primary;
+            border-radius: $radius-sm;
+            transition: width 0.6s ease;
+        }
     }
 }

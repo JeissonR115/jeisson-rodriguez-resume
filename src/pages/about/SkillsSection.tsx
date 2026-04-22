@@ -1,23 +1,23 @@
-import Tag from '@/components/ui/tag';
-import profile from '@/data/profile.json';
+import skillsData from '@/data/skills.json';
 import { typedEntries } from '@/helpers/typedEntries';
 import type { AppResources } from '@/locales/types';
 import { useTranslation } from 'react-i18next';
-
 import './skillsSection.scss';
 
 type SkillsT = AppResources['skills'];
-
 type SkillCategoryId = keyof SkillsT['technical']['categories'];
+type SkillItem = { name: string; score: number };
 
 export function SkillsSection() {
     const { t } = useTranslation('skills');
 
-    const skillEntries = typedEntries(profile.skills.technical) as [
+    const skillEntries = typedEntries(skillsData.technical) as [
         SkillCategoryId,
-        string[],
+        SkillItem[],
     ][];
-    const softSkills = t('soft.items', { returnObjects: true }) as string[];
+    type SoftSkillId = keyof SkillsT['soft']['items'];
+
+    const { maxScore } = skillsData;
 
     return (
         <section className="skills container">
@@ -29,7 +29,24 @@ export function SkillsSection() {
                     <h4>{t(`technical.categories.${category}`)}</h4>
                     <div className="skills__list">
                         {items.map((skill) => (
-                            <Tag key={skill} label={skill} variant="accent" />
+                            <div key={skill.name} className="skills__item">
+                                <div className="skills__item-header">
+                                    <span className="skills__item-name">
+                                        {skill.name}
+                                    </span>
+                                    <span className="skills__item-score">
+                                        {skill.score}/{maxScore}
+                                    </span>
+                                </div>
+                                <div className="skills__bar">
+                                    <div
+                                        className="skills__bar-fill"
+                                        style={{
+                                            width: `${(skill.score / maxScore) * 100}%`,
+                                        }}
+                                    />
+                                </div>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -37,8 +54,25 @@ export function SkillsSection() {
 
             <h3>{t('soft.title')}</h3>
             <div className="skills__list">
-                {softSkills.map((skill) => (
-                    <Tag key={skill} label={skill} variant="accent" />
+                {skillsData.softSkills.map((skill) => (
+                    <div key={skill.id} className="skills__item">
+                        <div className="skills__item-header">
+                            <span className="skills__item-name">
+                                {t(`soft.items.${skill.id as SoftSkillId}`)}
+                            </span>
+                            <span className="skills__item-score">
+                                {skill.score}/{maxScore}
+                            </span>
+                        </div>
+                        <div className="skills__bar">
+                            <div
+                                className="skills__bar-fill"
+                                style={{
+                                    width: `${(skill.score / maxScore) * 100}%`,
+                                }}
+                            />
+                        </div>
+                    </div>
                 ))}
             </div>
         </section>
