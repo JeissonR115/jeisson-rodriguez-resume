@@ -1,0 +1,25 @@
+{
+    "title": "Skills",
+    "technical": {
+        "title": "Technical Skills",
+        "categories": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "databases": "Databases",
+            "vcs": "Version Control"
+        }
+    },
+    "soft": {
+        "title": "Soft Skills",
+        "items": {
+            "problem-solving": "Problem Solving",
+            "critical-thinking": "Critical Thinking",
+            "teamwork": "Teamwork",
+            "communication": "Communication",
+            "adaptability": "Adaptability",
+            "time-management": "Time Management",
+            "attention-to-detail": "Attention to Detail",
+            "responsibility": "Responsibility"
+        }
+    }
+}

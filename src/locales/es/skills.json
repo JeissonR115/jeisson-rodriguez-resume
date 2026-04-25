@@ -1,0 +1,25 @@
+{
+    "title": "Habilidades",
+    "technical": {
+        "title": "Habilidades Técnicas",
+        "categories": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "databases": "Bases de datos",
+            "vcs": "Control de versiones"
+        }
+    },
+    "soft": {
+        "title": "Habilidades Blandas",
+        "items": {
+            "problem-solving": "Resolución de problemas",
+            "critical-thinking": "Pensamiento crítico",
+            "teamwork": "Trabajo en equipo",
+            "communication": "Comunicación",
+            "adaptability": "Adaptabilidad",
+            "time-management": "Gestión del tiempo",
+            "attention-to-detail": "Atención al detalle",
+            "responsibility": "Responsabilidad"
+        }
+    }
+}

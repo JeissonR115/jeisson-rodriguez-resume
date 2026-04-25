@@ -1,0 +1,17 @@
+{
+    "hero": {
+        "greeting": "Hola, soy",
+        "actions": [
+            {
+                "label": "Ver proyectos",
+                "href": "/projects",
+                "variant": "primary"
+            },
+            {
+                "label": "Sobre mí",
+                "href": "/about",
+                "variant": "secondary"
+            }
+        ]
+    }
+}

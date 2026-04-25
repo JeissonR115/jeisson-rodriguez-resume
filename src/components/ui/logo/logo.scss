@@ -1,0 +1,73 @@
+.logo {
+    font-family: $font-mono;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-lg;
+    display: inline-flex;
+    align-items: center;
+    gap: 1px;
+    cursor: pointer;
+    width: 9.5ch;
+    justify-content: center;
+
+    &--sm {
+        font-size: $font-size-md;
+    }
+    &--md {
+        font-size: $font-size-lg;
+    }
+    &--lg {
+        font-size: $font-size-xxl;
+    }
+
+    &--collapsed {
+        .logo-eis {
+            max-width: 0;
+            opacity: 0;
+        }
+
+        .logo-bracket {
+            color: $accent-hover;
+        }
+    }
+
+    &-bracket {
+        color: $color-primary;
+        transition: color $transition-normal;
+    }
+
+    &-name {
+        display: inline-flex;
+        overflow: hidden;
+    }
+
+    &-j {
+        color: $color-primary;
+        transition: color $transition-normal;
+    }
+
+    &-eis {
+        font-family: $font-sans;
+        color: $text-strong;
+        max-width: 3ch;
+        opacity: 1;
+        transition:
+            max-width $transition-normal,
+            opacity $transition-normal;
+    }
+
+    &-son {
+        color: $color-primary;
+        transition: color $transition-normal;
+    }
+
+    &:hover {
+        .logo-eis {
+            max-width: 0;
+            opacity: 0;
+        }
+
+        .logo-bracket {
+            color: $accent-hover;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "title": "Projects",
+    "items": {
+        "portfolio": {
+            "name": "Portfolio",
+            "description": "Personal website built with React and TypeScript."
+        },
+        "api-rest": {
+            "name": "API REST",
+            "description": "API with clean architecture in .NET and SQL Server."
+        }
+    }
+}

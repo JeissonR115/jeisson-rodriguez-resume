@@ -1,0 +1,25 @@
+.education {
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: $space-xs;
+        padding: $space-md 0;
+        border-bottom: 1px solid $accent-border;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        h3 {
+            font-size: $font-size-md;
+            font-weight: $font-weight-bold;
+            color: $text-strong;
+        }
+
+        p {
+            font-size: $font-size-sm;
+            color: $text;
+            font-family: $font-mono;
+        }
+    }
+}

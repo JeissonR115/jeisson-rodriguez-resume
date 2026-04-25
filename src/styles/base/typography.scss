@@ -1,5 +1,32 @@
 @use '/src/styles/_variables.scss' as *;
 
+@mixin font-face($family, $path, $weight, $file) {
+    @font-face {
+        font-family: $family;
+        src: url('/src/assets/fonts/#{$path}/#{$file}.woff2') format('woff2');
+        font-weight: $weight;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@mixin jetbrains-mono($weight, $file) {
+    @include font-face('JetBrains Mono', 'JetBrainsMono', $weight, $file);
+}
+
+@mixin inter($weight, $file) {
+    @include font-face('Inter', 'Inter', $weight, $file);
+}
+
+@include jetbrains-mono(400, 'JetBrainsMono-Regular');
+@include jetbrains-mono(500, 'JetBrainsMono-Medium');
+@include jetbrains-mono(700, 'JetBrainsMono-Bold');
+
+@include inter(400, 'InterDisplay-Regular');
+@include inter(500, 'InterDisplay-Medium');
+@include inter(600, 'InterDisplay-SemiBold');
+@include inter(700, 'InterDisplay-Bold');
+
 h1,
 h2 {
     font-family: $font-heading;

@@ -1,0 +1,15 @@
+{
+    "title": "About me",
+    "role": "Software Developer",
+    "available": "Available for work",
+    "summary": "I build software focused on frontend (React, TypeScript) with solid backend foundations (.NET, SQL Server). I care about clean code, good organization and understanding how things work — not just using them.",
+    "highlights": {
+        "title": "What I'm good at",
+        "items": [
+            "Web interfaces with React and TypeScript",
+            "Complex business logic in .NET and SQL Server",
+            "Clean, well-structured code",
+            "Frontend-backend integration"
+        ]
+    }
+}

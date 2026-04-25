@@ -1,18 +1,21 @@
+import { ThemeProvider } from '@/context/theme/ThemeProvider.tsx';
+import '@/i18n/i18n.ts';
+import { router } from '@/router/index.tsx';
+import { FabProvider } from '@/services/fab/FabProvider.tsx';
+import { ModalProvider } from '@/services/modal/ModalProvider.tsx';
+import '@/styles/base/globals.scss';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
-import { LanguageProvider } from './context/language/LanguageProvider.tsx';
-import { ThemeProvider } from './context/theme/ThemeProvider.tsx';
-import './index.scss';
-import './styles/base/globals.scss';
-import './styles/utilities/utilities.scss';
+import { RouterProvider } from 'react-router-dom';
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <ThemeProvider>
-            <LanguageProvider>
-                <App />
-            </LanguageProvider>
+            <ModalProvider>
+                <FabProvider>
+                    <RouterProvider router={router} />
+                </FabProvider>
+            </ModalProvider>
         </ThemeProvider>
     </StrictMode>,
 );

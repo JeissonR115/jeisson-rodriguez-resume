@@ -1,0 +1,21 @@
+.about-page {
+    display: flex;
+    gap: $space-xl;
+    padding: $space-xl 0;
+
+    &__toc {
+        // TODO: temparily hide on mobile until we implement a better design for it
+        display: none;
+
+        @media (min-width: 1024px) {
+            display: block;
+            width: 200px;
+            flex-shrink: 0;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        min-width: 0;
+    }
+}

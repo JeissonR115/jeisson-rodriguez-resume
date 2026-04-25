@@ -1,0 +1,87 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-sm;
+    border-radius: $radius-md;
+    font-weight: $font-weight-medium;
+    font-family: $font-mono;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition:
+        background $transition-fast,
+        color $transition-fast,
+        border-color $transition-fast;
+
+    // ─── Sizes ───────────────────────────────────────
+    &--sm {
+        padding: $space-xs $space-md;
+        font-size: $font-size-sm;
+    }
+    &--md {
+        padding: $space-sm $space-lg;
+        font-size: $font-size-md;
+    }
+    &--lg {
+        padding: $space-md $space-xl;
+        font-size: $font-size-lg;
+    }
+
+    // ─── Variants ────────────────────────────────────
+    &--primary {
+        background: $color-primary;
+        color: var(--color-white);
+
+        &:hover {
+            background: $accent-hover;
+            color: var(--color-white);
+        }
+        &:active {
+            background: $accent-active;
+            opacity: 0.9;
+        }
+    }
+
+    &--secondary {
+        background: transparent;
+        color: $color-primary;
+        border: 1.5px solid $border;
+
+        &:hover {
+            background: $accent-bg;
+        }
+        &:active {
+            opacity: 0.8;
+        }
+    }
+
+    &--ghost {
+        background: transparent;
+        color: $text;
+
+        &:hover {
+            background: $accent-bg;
+            color: $color-primary;
+        }
+        &:active {
+            opacity: 0.8;
+        }
+    }
+
+    // ─── Icon only ───────────────────────────────────
+    &--icon {
+        padding: $space-sm;
+        border-radius: $radius-sm;
+
+        .btn__icon {
+            color: inherit;
+            margin: 0;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Jeisson Rodriguez",
+    "email": "jeissonfeliper@gmail.com",
+    "phone": "3105767147",
+    "location": "Bogotá, Colombia",
+    "available": true,
+    "languages": [
+        { "id": "spanish", "level": "native" },
+        { "id": "english", "level": "B2" }
+    ],
+    "education": [
+        {
+            "id": "software-engineering",
+            "institution": "UNINPAHU",
+            "start": "2022",
+            "end": null
+        }
+    ],
+    "certifications": [
+        { "id": "mision-tic", "start": "2021-07", "end": "2021-11" },
+        { "id": "platzi", "start": "2022-01", "end": "2025-01" }
+    ],
+    "experience": [
+        {
+            "id": "mectronics",
+            "company": "Mectronics",
+            "start": "2024-12",
+            "end": null
+        },
+        {
+            "id": "ambidata-pia",
+            "company": "UNINPAHU",
+            "start": "2024-01",
+            "end": "2024-06"
+        }
+    ]
+}

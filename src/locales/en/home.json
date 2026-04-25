@@ -1,0 +1,13 @@
+{
+    "hero": {
+        "greeting": "Hi, I'm",
+        "actions": [
+            {
+                "label": "View projects",
+                "href": "/projects",
+                "variant": "primary"
+            },
+            { "label": "About me", "href": "/about", "variant": "secondary" }
+        ]
+    }
+}

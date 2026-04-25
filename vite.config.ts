@@ -2,8 +2,20 @@ import babel from '@rolldown/plugin-babel';
 import react, { reactCompilerPreset } from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+    base: mode === 'production' ? '/jeisson-rodriguez-resume/' : '/',
+    resolve: {
+        alias: {
+            '@': '/src',
+        },
+    },
     plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
+    server: {
+        hmr: {
+            protocol: 'ws',
+            host: 'localhost',
+        },
+    },
     css: {
         preprocessorOptions: {
             scss: {
@@ -14,4 +26,4 @@ export default defineConfig({
             },
         },
     },
-});
+}));

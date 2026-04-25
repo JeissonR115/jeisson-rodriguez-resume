@@ -1,10 +1,9 @@
 # Personal CV - React + TypeScript
 [Español](README.es.md)
-
 ---
-This project is a personal web CV built with React, TypeScript, and Vite, focused on performance, scalability, and clean architecture.
 
-It supports multi-language content using JSON files, making it easy to maintain and extend.
+Personal portfolio built with React, TypeScript, and Vite, focused on performance, scalability, and clean architecture.
+Supports multiple languages and themes via JSON configuration files.
 
 ---
 
@@ -13,8 +12,8 @@ It supports multi-language content using JSON files, making it easy to maintain 
 - React
 - Vite
 - TypeScript
+- SCSS
 - Prettier + ESLint
-- JSON-based i18n
 
 ---
 
@@ -22,57 +21,65 @@ It supports multi-language content using JSON files, making it easy to maintain 
 
 ```
 src/
- ├── assets/        # Static files (images, icons, etc.)
- ├── components/    # Reusable UI components
- ├── layouts/       # Layout components
- ├── pages/         # Main pages (Home, About, etc.)
- ├── i18n/          # Language files (en.json, es.json)
- ├── hooks/         # Custom hooks
- ├── types/         # TypeScript types and interfaces
- └── App.tsx
+├── assets/           # Static files (images, icons)
+├── components/       # Reusable UI components
+├── config/           # Global configuration
+│   ├── pages/        # Page content (home.json, ...)
+│   ├── navigation.json
+│   ├── projects.json
+│   └── social.json
+├── context/          # Global contexts
+│   ├── theme/        # ThemeContext, ThemeProvider, useTheme
+│   └── language/     # LanguageContext, LanguageProvider, useLanguage
+├── hooks/            # Custom hooks (usePageConfig, ...)
+├── pages/            # Main pages
+├── styles/           # Global SCSS
+│   ├── base/
+│   ├── utilities/
+│   └── _variables.scss
+└── App.tsx
 ```
 
 ---
 
 ## Multi-language Strategy
 
-Each language is defined in a JSON file:
-
-```
-src/i18n/
- ├── en.json
- └── es.json
-```
-
-Example:
+Texts live in `config/pages/` with embedded `i18n` structure:
 
 ```json
 {
-  "name": "Jeisson Rodriguez",
-  "title": "Software Developer",
-  "about": "I build scalable systems..."
+  "hero": {
+    "i18n": {
+      "es": { "greeting": "Hola, soy" },
+      "en": { "greeting": "Hi, I'm" }
+    }
+  }
 }
 ```
 
-This approach provides:
+The `usePageConfig` hook resolves the active language automatically:
 
-- Easy translation management
-- Clear separation between content and logic
-- Scalability for additional languages
+```tsx
+const { hero, about } = usePageConfig(homeConfig);
+```
+
+---
+
+## Theming
+
+Theme switching uses CSS variables + `data-theme` on `<html>`:
+
+```scss
+:root { --color-bg: #ece7e5; }
+[data-theme='dark'] { --color-bg: #242426; }
+```
 
 ---
 
 ## Getting Started
 
-### 1. Install dependencies
-
 ```bash
 npm install
-```
-
-### 2. Run development server
-
-```bash
 npm run dev
 ```
 
@@ -80,28 +87,14 @@ npm run dev
 
 ## Code Quality
 
-Format all files:
-
 ```bash
-npm run format
-```
-
-Lint project:
-
-```bash
-npm run lint
+npm run format   # Prettier
+npm run lint     # ESLint
 ```
 
 ---
 
 ## VS Code Setup
-
-Recommended extensions:
-
-- Prettier
-- ESLint
-
-Recommended settings:
 
 ```json
 "editor.formatOnSave": true,
@@ -114,27 +107,19 @@ Recommended settings:
 
 ## Future Improvements
 
-- Add dark and light theme support
-- Implement animations with Framer Motion
-- Improve accessibility (a11y)
-- Add SEO optimization
+- Animations with Framer Motion
+- Accessibility improvements (a11y)
+- Dynamic SEO meta tags
 - Deploy to GitHub Pages or Vercel
 
 ---
 
 ## License
 
-This project is open-source and available under the MIT License.
+MIT
 
 ---
 
 ## Author
 
-**Jeisson Rodriguez**  
-Software Developer
-
----
-
-## Contributing
-
-Contributions, issues, and feature requests are welcome. Feel free to fork the repository and submit pull requests.
+**Jeisson Rodriguez** — Software Developer

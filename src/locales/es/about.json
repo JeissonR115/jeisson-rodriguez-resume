@@ -1,0 +1,15 @@
+{
+    "title": "Sobre mí",
+    "role": "Software Developer",
+    "available": "Disponible para trabajar",
+    "summary": "Desarrollo software con foco en frontend (React, TypeScript) y bases sólidas en backend (.NET, SQL Server). Me importa el código limpio, la organización y entender cómo funcionan las cosas — no solo usarlas.",
+    "highlights": {
+        "title": "En qué destaco",
+        "items": [
+            "Interfaces web con React y TypeScript",
+            "Lógica de negocio compleja en .NET y SQL Server",
+            "Código limpio y bien estructurado",
+            "Integración frontend-backend"
+        ]
+    }
+}

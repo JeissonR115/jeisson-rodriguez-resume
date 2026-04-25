@@ -1,0 +1,73 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-xl;
+    min-height: calc(100vh - 64px);
+    padding: $space-xl 0;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        max-width: 55ch;
+    }
+
+    &__greeting {
+        font-family: $font-mono;
+        font-size: $font-size-md;
+        color: $color-primary;
+        margin-bottom: $space-sm;
+    }
+
+    &__name {
+        font-size: $font-size-xxl;
+        font-weight: $font-weight-bold;
+        color: $text-strong;
+        letter-spacing: -1.5px;
+        margin: 0 0 $space-xs;
+
+        @media (max-width: 768px) {
+            font-size: $font-size-xl;
+        }
+    }
+
+    &__role {
+        font-family: $font-mono;
+        font-size: $font-size-md;
+        color: $color-primary;
+        margin-bottom: $space-lg;
+    }
+
+    &__subtitle {
+        color: $text;
+        line-height: 1.7;
+        margin-bottom: $space-xl;
+    }
+
+    &__actions {
+        display: flex;
+        gap: $space-md;
+        flex-wrap: wrap;
+    }
+
+    &__image {
+        flex-shrink: 0;
+        width: 340px;
+
+        img {
+            width: 100%;
+            border-radius: $radius-xl;
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        min-height: unset;
+        padding: $space-xl 0;
+
+        &__image {
+            width: 200px;
+            align-self: center;
+        }
+    }
+}

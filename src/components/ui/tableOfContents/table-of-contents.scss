@@ -1,0 +1,58 @@
+@use '/src/styles/_variables.scss' as *;
+
+.toc {
+    position: sticky;
+    top: var(--header-height);
+    max-height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+    padding: $space-md 0;
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: $space-xs;
+    }
+
+    &__item {
+        --level-indent: 0;
+
+        &--h2 {
+            --level-indent: 0;
+        }
+        &--h3 {
+            --level-indent: 1;
+        }
+        &--h4 {
+            --level-indent: 2;
+        }
+
+        a {
+            padding-left: calc(
+                #{$space-sm} + var(--level-indent) * #{$space-md}
+            );
+            display: block;
+            font-size: $font-size-sm;
+            color: $text;
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            border-radius: 0 $radius-sm $radius-sm 0;
+            transition:
+                color $transition-fast,
+                border-color $transition-fast,
+                background $transition-fast,
+                padding $transition-fast;
+
+            &:hover {
+                color: $color-primary;
+                background: $accent-bg;
+            }
+        }
+
+        &--active a {
+            color: $color-primary;
+            border-left-color: $color-primary;
+            font-weight: $font-weight-medium;
+        }
+    }
+}

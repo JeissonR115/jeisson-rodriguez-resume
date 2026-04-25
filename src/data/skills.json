@@ -1,0 +1,34 @@
+{
+    "maxScore": 10,
+    "technical": {
+        "frontend": [
+            { "name": "React.js", "score": 8 },
+            { "name": "TypeScript", "score": 8 },
+            { "name": "JavaScript", "score": 7 },
+            { "name": "HTML", "score": 9 },
+            { "name": "CSS", "score": 7 },
+            { "name": "jQuery", "score": 5 }
+        ],
+        "backend": [
+            { "name": ".NET 8", "score": 6 },
+            { "name": ".NET Framework", "score": 6 },
+            { "name": "WCF", "score": 4 },
+            { "name": "Web APIs", "score": 7 }
+        ],
+        "databases": [{ "name": "SQL Server", "score": 7 }],
+        "vcs": [
+            { "name": "Git", "score": 7 },
+            { "name": "GitHub", "score": 7 }
+        ]
+    },
+    "softSkills": [
+        { "id": "problem-solving", "score": 8 },
+        { "id": "critical-thinking", "score": 8 },
+        { "id": "teamwork", "score": 7 },
+        { "id": "communication", "score": 7 },
+        { "id": "adaptability", "score": 8 },
+        { "id": "time-management", "score": 7 },
+        { "id": "attention-to-detail", "score": 8 },
+        { "id": "responsibility", "score": 9 }
+    ]
+}

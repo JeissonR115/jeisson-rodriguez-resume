@@ -1,0 +1,133 @@
+@use '/src/styles/_variables.scss' as *;
+
+.fab {
+    position: fixed;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-sm;
+    border: none;
+    cursor: pointer;
+    font-family: $font-mono;
+    font-weight: $font-weight-medium;
+    white-space: nowrap;
+    text-decoration: none;
+    z-index: $z-dropdown;
+    box-shadow: $shadow;
+    transition:
+        background $transition-fast,
+        color $transition-fast,
+        box-shadow $transition-fast,
+        transform $transition-fast;
+
+    // ─── Sizes ──────────────────────────────────────────
+    &--sm {
+        width: 40px;
+        height: 40px;
+        border-radius: $radius-md;
+        font-size: $font-size-sm;
+
+        &.fab--labeled {
+            width: auto;
+            padding: 0 $space-md;
+        }
+    }
+
+    &--md {
+        width: 52px;
+        height: 52px;
+        border-radius: $radius-lg;
+        font-size: $font-size-md;
+
+        &.fab--labeled {
+            width: auto;
+            padding: 0 $space-lg;
+        }
+    }
+
+    &--lg {
+        width: 64px;
+        height: 64px;
+        border-radius: $radius-xl;
+        font-size: $font-size-lg;
+
+        &.fab--labeled {
+            width: auto;
+            padding: 0 $space-xl;
+        }
+    }
+
+    // ─── Variants ───────────────────────────────────────
+    &--primary {
+        background: $color-primary;
+        color: var(--color-white);
+
+        &:hover {
+            background: $accent-hover;
+            transform: translateY(-2px);
+            box-shadow:
+                rgba(11, 11, 12, 0.15) 0 16px 24px -4px,
+                rgba(11, 11, 12, 0.08) 0 6px 10px -2px;
+        }
+
+        &:active {
+            background: $accent-active;
+            transform: translateY(0);
+            box-shadow: $shadow;
+        }
+    }
+
+    &--secondary {
+        background: $bg-elevated;
+        color: $color-primary;
+        border: 1.5px solid $border;
+
+        &:hover {
+            background: $accent-bg;
+            transform: translateY(-2px);
+            box-shadow:
+                rgba(11, 11, 12, 0.15) 0 16px 24px -4px,
+                rgba(11, 11, 12, 0.08) 0 6px 10px -2px;
+        }
+
+        &:active {
+            transform: translateY(0);
+            box-shadow: $shadow;
+        }
+    }
+
+    // ─── Positions ──────────────────────────────────────
+    &--bottom-right {
+        bottom: $space-xl;
+        right: $space-xl;
+    }
+
+    &--bottom-left {
+        bottom: $space-xl;
+        left: $space-xl;
+    }
+
+    &--top-right {
+        top: calc(var(--header-height) + $space-xl);
+        right: $space-xl;
+    }
+
+    &--top-left {
+        top: calc(var(--header-height) + $space-xl);
+        left: $space-xl;
+    }
+
+    // ─── Elements ───────────────────────────────────────
+    &__icon {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    &__label {
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: 1;
+    }
+}

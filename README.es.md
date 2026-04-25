@@ -1,12 +1,9 @@
 # CV Personal - React + TypeScript
-
 [English](README.md)
-
 ---
 
-Este proyecto es un CV web personal desarrollado con React, TypeScript y Vite, enfocado en rendimiento, escalabilidad y arquitectura limpia.
-
-Soporta contenido multi-idioma mediante archivos JSON, lo que facilita su mantenimiento y extensión.
+Portafolio web personal desarrollado con React, TypeScript y Vite, enfocado en rendimiento, escalabilidad y arquitectura limpia.
+Soporta múltiples idiomas y temas mediante archivos de configuración JSON.
 
 ---
 
@@ -15,96 +12,83 @@ Soporta contenido multi-idioma mediante archivos JSON, lo que facilita su manten
 - React
 - Vite
 - TypeScript
+- SCSS
 - Prettier + ESLint
-- JSON-based i18n
 
 ---
 
 ## Estructura del Proyecto
-
 ```
 src/
- ├── assets/        # Archivos estáticos (imágenes, iconos, etc.)
- ├── components/    # Componentes UI reutilizables
- ├── layouts/       # Componentes de estructura
- ├── pages/         # Páginas principales (Inicio, Acerca de, etc.)
- ├── i18n/          # Archivos de idioma (en.json, es.json)
- ├── hooks/         # Hooks personalizados
- ├── types/         # Tipos e interfaces de TypeScript
- └── App.tsx
+├── assets/           # Archivos estáticos (imágenes, iconos)
+├── components/       # Componentes UI reutilizables
+├── config/           # Configuración global
+│   ├── pages/        # Textos por página (home.json, ...)
+│   ├── navigation.json
+│   ├── projects.json
+│   └── social.json
+├── context/          # Contextos globales
+│   ├── theme/        # ThemeContext, ThemeProvider, useTheme
+│   └── language/     # LanguageContext, LanguageProvider, useLanguage
+├── hooks/            # Hooks personalizados (usePageConfig, ...)
+├── pages/            # Páginas principales
+├── styles/           # SCSS global
+│   ├── base/
+│   ├── utilities/
+│   └── _variables.scss
+└── App.tsx
 ```
 
 ---
 
 ## Estrategia Multi-idioma
 
-Cada idioma se define en un archivo JSON:
-
-```
-src/i18n/
- ├── en.json
- └── es.json
-```
-
-Ejemplo:
-
+Los textos viven en `config/pages/` con la estructura `i18n` embebida:
 ```json
 {
-  "name": "Jeisson Rodriguez",
-  "title": "Desarrollador de Software",
-  "about": "Construyo sistemas escalables..."
+  "hero": {
+    "i18n": {
+      "es": { "greeting": "Hola, soy" },
+      "en": { "greeting": "Hi, I'm" }
+    }
+  }
 }
 ```
 
-Este enfoque proporciona:
+El hook `usePageConfig` resuelve automáticamente el idioma activo:
+```tsx
+const { hero, about } = usePageConfig(homeConfig);
+```
 
-- Gestión sencilla de traducciones
-- Separación clara entre contenido y lógica
-- Escalabilidad para agregar más idiomas
+---
+
+## Temas
+
+El cambio de tema usa CSS variables + `data-theme` en el `<html>`:
+```scss
+:root { --color-bg: #ece7e5; }
+[data-theme='dark'] { --color-bg: #242426; }
+```
 
 ---
 
 ## Primeros Pasos
-
-### 1. Instalar dependencias
-
 ```bash
 npm install
-```
-
-### 2. Ejecutar servidor de desarrollo
-
-```bash
 npm run dev
 ```
 
 ---
 
 ## Calidad de Código
-
-Formatear todos los archivos:
-
 ```bash
-npm run format
-```
-
-Ejecutar linter:
-
-```bash
-npm run lint
+npm run format   # Prettier
+npm run lint     # ESLint
 ```
 
 ---
 
 ## Configuración de VS Code
-
-Extensiones recomendadas:
-
-- Prettier
-- ESLint
-
-Configuración recomendada:
-
 ```json
 "editor.formatOnSave": true,
 "editor.codeActionsOnSave": {
@@ -116,27 +100,19 @@ Configuración recomendada:
 
 ## Mejoras Futuras
 
-- Agregar soporte para tema oscuro y claro
-- Implementar animaciones con Framer Motion
-- Mejorar accesibilidad (a11y)
-- Agregar optimización SEO
-- Desplegar en GitHub Pages o Vercel
+- Animaciones con Framer Motion
+- Mejoras de accesibilidad (a11y)
+- SEO con meta tags dinámicos
+- Despliegue en GitHub Pages o Vercel
 
 ---
 
 ## Licencia
 
-Este proyecto es de código abierto y está disponible bajo la licencia MIT.
+MIT
 
 ---
 
 ## Autor
 
-**Jeisson Rodriguez**  
-Desarrollador de Software
-
----
-
-## Contribuciones
-
-Las contribuciones, reportes de issues y sugerencias son bienvenidas. Puedes hacer fork del repositorio y enviar pull requests.
+**Jeisson Rodriguez** — Desarrollador de Software
