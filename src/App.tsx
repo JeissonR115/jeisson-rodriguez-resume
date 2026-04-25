@@ -6,6 +6,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import './app.scss';
 import Footer from './components/layout/footer';
 import Header from './components/layout/header';
+import { ModalPortal } from './services/modal/ModalPortal';
 
 function App() {
     const location = useLocation();
@@ -30,6 +31,7 @@ function App() {
             </main>
             <Footer />
             <FabPortal />
+            <ModalPortal />
         </div>
     );
 }

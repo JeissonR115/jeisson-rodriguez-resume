@@ -1,5 +1,6 @@
 import TableOfContents from '@/components/ui/tableOfContents';
 import { useFab } from '@/services/fab/useFab';
+import { useModal } from '@/services/modal/useModal';
 import { TableOfContents as IconTableOfContents } from 'lucide-react';
 import { AboutSection } from './AboutSection';
 import { EducationSection } from './EducationSection';
@@ -8,10 +9,16 @@ import { SkillsSection } from './SkillsSection';
 import './about.scss';
 
 function About() {
+    const { openModal } = useModal();
+
     useFab({
         icon: <IconTableOfContents />,
         label: 'Table of contents',
-        onClick: () => alert('TOC FAB clicked!'),
+        onClick: () =>
+            openModal(<p>Texto de prueba</p>, {
+                title: 'Contents',
+                showClose: false,
+            }),
     });
 
     return (
