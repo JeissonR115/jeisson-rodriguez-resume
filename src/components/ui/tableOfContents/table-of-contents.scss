@@ -1,5 +1,12 @@
 @use '/src/styles/_variables.scss' as *;
-
+.toc-desktop {
+    display: block;
+    position: sticky;
+    top: calc(var(--header-height) + #{$space-lg});
+    max-height: calc(100vh - var(--header-height) - #{$space-xl});
+    overflow-y: auto;
+    align-self: flex-start;
+}
 .toc {
     position: sticky;
     top: var(--header-height);
@@ -49,7 +56,7 @@
             }
         }
 
-        &--active a {
+        &#{&}--active a {
             color: $color-primary;
             border-left-color: $color-primary;
             font-weight: $font-weight-medium;
