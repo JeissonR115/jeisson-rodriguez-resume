@@ -1,4 +1,6 @@
+import { ChevronRight } from 'lucide-react';
 import { useState } from 'react';
+import { iconSizes } from '../Icon/icon.type';
 import { groupHeadings } from './groupHeadings';
 import './table-of-contents.scss';
 import type { Heading } from './useTableOfContents';
@@ -46,7 +48,12 @@ export function TocContent({
                     onNavigate(id);
                     onAfterNavigate?.();
                 } else {
-                    setOpenParents((prev) => new Set(prev).add(id));
+                    setOpenParents((prev) => {
+                        const next = new Set(prev);
+                        next.clear();
+                        next.add(id);
+                        return next;
+                    });
                 }
                 return;
             }
@@ -93,8 +100,22 @@ export function TocContent({
                                     hasChildren,
                                 )}
                                 aria-expanded={hasChildren ? isOpen : undefined}
+                                className="toc__link"
                             >
-                                {parent.label}
+                                <span
+                                    style={{
+                                        width: 100,
+                                        display: 'inline-block',
+                                    }}
+                                >
+                                    {parent.label}
+                                </span>
+                                {hasChildren && (
+                                    <ChevronRight
+                                        size={iconSizes.md}
+                                        className={`toc__chevron ${isOpen ? 'toc__chevron--open' : ''}`}
+                                    />
+                                )}
                             </a>
 
                             {(!collapsible || isOpen) && hasChildren && (

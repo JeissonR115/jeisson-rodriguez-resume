@@ -64,14 +64,16 @@ export function TocMobile({
         } = latestRef.current;
 
         openModal(
-            <TocContent
-                headings={headings}
-                active={active}
-                onNavigate={scrollTo}
-                levels={levels}
-                collapsible={collapsible}
-                onAfterNavigate={closeModal}
-            />,
+            <div className="toc-mobile">
+                <TocContent
+                    headings={headings}
+                    active={active}
+                    onNavigate={scrollTo}
+                    levels={levels}
+                    collapsible={collapsible}
+                    onAfterNavigate={closeModal}
+                />
+            </div>,
         );
     }, []);
 

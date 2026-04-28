@@ -21,6 +21,7 @@ export function TocDesktop({
                 onNavigate={scrollTo}
                 levels={levels}
                 collapsible={collapsible}
+                navigateOnFirstClick={true}
             />
         </aside>
     );
