@@ -5,6 +5,9 @@
     max-height: calc(100vh - var(--header-height) - #{$space-xl});
     overflow-y: auto;
     align-self: flex-start;
+    min-width: 200px;
+    max-width: 500px;
+    width: 20vw;
 }
 .toc-mobile {
     width: 70vw;
