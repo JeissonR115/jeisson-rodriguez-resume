@@ -102,14 +102,7 @@ export function TocContent({
                                 aria-expanded={hasChildren ? isOpen : undefined}
                                 className="toc__link"
                             >
-                                <span
-                                    style={{
-                                        width: 100,
-                                        display: 'inline-block',
-                                    }}
-                                >
-                                    {parent.label}
-                                </span>
+                                <span>{parent.label}</span>
                                 {hasChildren && (
                                     <ChevronRight
                                         size={iconSizes.md}
