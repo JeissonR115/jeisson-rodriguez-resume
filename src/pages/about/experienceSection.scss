@@ -17,13 +17,6 @@
         justify-content: space-between;
         gap: $space-md;
         margin-bottom: $space-xs;
-
-        h3 {
-            font-size: $font-size-lg;
-            color: $text-strong;
-            font-weight: $font-weight-bold;
-        }
-
         @media (max-width: 768px) {
             flex-direction: column;
             gap: $space-xs;

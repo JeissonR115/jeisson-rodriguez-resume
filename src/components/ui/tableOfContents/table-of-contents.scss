@@ -1,5 +1,19 @@
-@use '/src/styles/_variables.scss' as *;
-
+.toc-desktop {
+    display: block;
+    position: sticky;
+    top: calc(var(--header-height) + #{$space-lg});
+    max-height: calc(100vh - var(--header-height) - #{$space-xl});
+    overflow-y: auto;
+    align-self: flex-start;
+    min-width: 200px;
+    max-width: 500px;
+    width: 20vw;
+}
+.toc-mobile {
+    width: 70vw;
+    max-width: 500px;
+    min-width: 200px;
+}
 .toc {
     position: sticky;
     top: var(--header-height);
@@ -28,10 +42,13 @@
         }
 
         a {
+            display: flex;
+            align-items: center;
+            align-content: center;
+
             padding-left: calc(
                 #{$space-sm} + var(--level-indent) * #{$space-md}
             );
-            display: block;
             font-size: $font-size-sm;
             color: $text;
             text-decoration: none;
@@ -49,10 +66,23 @@
             }
         }
 
-        &--active a {
+        &#{&}--active a {
             color: $color-primary;
             border-left-color: $color-primary;
             font-weight: $font-weight-medium;
+        }
+    }
+
+    &__chevron {
+        margin-left: auto;
+        display: inline-block;
+        font-size: $font-size-xxl;
+        color: $color-primary;
+        transition: transform $transition-fast;
+        line-height: 1;
+
+        &--open {
+            transform: rotate(90deg);
         }
     }
 }

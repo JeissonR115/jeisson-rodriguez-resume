@@ -1,4 +1,5 @@
 import skillsData from '@/data/skills.json';
+import Tag from '@/components/ui/tag';
 import { typedEntries } from '@/helpers/typedEntries';
 import type { AppResources } from '@/locales/types';
 import { useTranslation } from 'react-i18next';
@@ -53,26 +54,12 @@ export function SkillsSection() {
             ))}
 
             <h3>{t('soft.title')}</h3>
-            <div className="skills__list">
+            <div className="skills__tags">
                 {skillsData.softSkills.map((skill) => (
-                    <div key={skill.id} className="skills__item">
-                        <div className="skills__item-header">
-                            <span className="skills__item-name">
-                                {t(`soft.items.${skill.id as SoftSkillId}`)}
-                            </span>
-                            <span className="skills__item-score">
-                                {skill.score}/{maxScore}
-                            </span>
-                        </div>
-                        <div className="skills__bar">
-                            <div
-                                className="skills__bar-fill"
-                                style={{
-                                    width: `${(skill.score / maxScore) * 100}%`,
-                                }}
-                            />
-                        </div>
-                    </div>
+                    <Tag
+                        key={skill.id}
+                        label={t(`soft.items.${skill.id as SoftSkillId}`)}
+                    />
                 ))}
             </div>
         </section>

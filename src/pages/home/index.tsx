@@ -1,4 +1,4 @@
-import heroImg from '@/assets/hero.png';
+import heroImg from '@/assets/profile-photo.png';
 import Button from '@/components/ui/button';
 import { isVariant } from '@/components/ui/button/button.utils';
 import profile from '@/data/profile.json';

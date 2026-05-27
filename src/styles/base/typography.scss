@@ -30,7 +30,7 @@
 h1,
 h2 {
     font-family: $font-heading;
-    font-weight: $font-weight-medium;
+    font-weight: $font-weight-normal;
     color: $text-h;
 }
 
@@ -38,11 +38,6 @@ h1 {
     font-size: $font-size-xxl;
     letter-spacing: -1.68px;
     margin: $space-xl 0;
-
-    @media (max-width: 1024px) {
-        font-size: $font-size-xl;
-        margin: $space-lg 0;
-    }
 }
 
 h2 {
@@ -50,12 +45,50 @@ h2 {
     line-height: 118%;
     letter-spacing: -0.24px;
     margin: 0 0 $space-xs;
-
-    @media (max-width: 1024px) {
-        font-size: $font-size-md;
-    }
+}
+h3 {
+    color: $text-strong;
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    margin: 0 0 $space-xs;
 }
 
-p {
-    margin: 0;
+h4 {
+    font-family: $font-heading;
+    font-weight: $font-weight-medium;
+    color: $text-strong;
+    font-size: $font-size-md;
+    margin: 0 0 $space-xs;
+}
+
+strong,
+b {
+    font-weight: $font-weight-bold;
+    color: $text-strong;
+}
+
+small {
+    font-size: $font-size-sm;
+    color: $text;
+}
+
+// code inline
+code {
+    font-family: $font-mono;
+    font-size: 0.875em;
+    background: $accent-bg;
+    color: $color-primary;
+    padding: 2px $space-xs;
+    border-radius: $radius-sm;
+}
+
+// links globales — ya los tienes en reset pero conviene tenerlos aquí también
+a {
+    color: $color-primary;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $accent-hover;
+    }
 }

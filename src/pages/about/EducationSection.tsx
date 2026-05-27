@@ -1,4 +1,5 @@
 import profile from '@/data/profile.json';
+import Tag from '@/components/ui/tag';
 import type { AppResources } from '@/locales/types';
 import { useTranslation } from 'react-i18next';
 import './educationSection.scss';
@@ -21,8 +22,8 @@ export function EducationSection() {
                     <h3>
                         {t(`degrees.${edu.id as EducationDegreeId}.degree`)}
                     </h3>
-                    <p>{edu.institution}</p>
-                    <p>
+                    <p className="education__institution">{edu.institution}</p>
+                    <p className="education__period">
                         {edu.start} — {edu.end ?? t('present')}
                     </p>
                 </div>
@@ -34,19 +35,22 @@ export function EducationSection() {
                     <h3>
                         {t(`certifications.${cert.id as CertificationId}.name`)}
                     </h3>
-                    <p>
+                    <p className="education__period">
                         {cert.start} — {cert.end}
                     </p>
                 </div>
             ))}
 
             <h2>{t('languages.title')}</h2>
-            {profile.languages.map((lang) => (
-                <p key={lang.id}>
-                    {t(`languages.names.${lang.id as LanguageNameId}`)} —{' '}
-                    {t(`languages.levels.${lang.level as LanguageLevelId}`)}
-                </p>
-            ))}
+            <div className="education__languages">
+                {profile.languages.map((lang) => (
+                    <Tag
+                        key={lang.id}
+                        label={`${t(`languages.names.${lang.id as LanguageNameId}`)} — ${t(`languages.levels.${lang.level as LanguageLevelId}`)}`}
+                        variant="accent"
+                    />
+                ))}
+            </div>
         </section>
     );
 }
