@@ -1,0 +1,135 @@
+{
+  "global": "JeissonRodriguezResume",
+  "pkg": "jeisson-rodriguez-resume",
+  "pkgDir": "/media/disk/Dev/jeisson-rodriguez-resume",
+  "extraEntries": [
+    "react-router-dom",
+    "./src/i18n/i18n.ts"
+  ],
+  "exported": [],
+  "storybookStatic": null,
+  "keyRecipe": 7,
+  "cfgSliceGlobal": "95d3613f6a8034fa44433462dd2702dc363a29754bcf67fe7f01275a90f8d672",
+  "components": [
+    {
+      "name": "AboutSection",
+      "group": "about",
+      "srcSha": null,
+      "sourceKey": "aea043f40148e1e1",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Button",
+      "group": "general",
+      "srcSha": null,
+      "sourceKey": "810859f279e4f4cd",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Carousel",
+      "group": "general",
+      "srcSha": null,
+      "sourceKey": "9998924fa8f3e71f",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "EducationSection",
+      "group": "about",
+      "srcSha": null,
+      "sourceKey": "d18e619521f5b2ba",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "ExperienceSection",
+      "group": "about",
+      "srcSha": null,
+      "sourceKey": "cb63dd03abdb404e",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Fab",
+      "group": "general",
+      "srcSha": null,
+      "sourceKey": "390ce711fbb751a1",
+      "cfgSlice": "48c7ba16aa096f6c5b19ae51af05f8c98fb861bd71b67eb2c64af60686a88186",
+      "stories": []
+    },
+    {
+      "name": "Footer",
+      "group": "layout",
+      "srcSha": null,
+      "sourceKey": "b7db73aa4c759587",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Header",
+      "group": "layout",
+      "srcSha": null,
+      "sourceKey": "b6603b4f73fd301e",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Home",
+      "group": "pages",
+      "srcSha": null,
+      "sourceKey": "57da7f00bcc8af6a",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Icon",
+      "group": "general",
+      "srcSha": null,
+      "sourceKey": "9105991beae83336",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Logo",
+      "group": "general",
+      "srcSha": null,
+      "sourceKey": "210ce583bbb4b343",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Modal",
+      "group": "general",
+      "srcSha": null,
+      "sourceKey": "535bb72ee896c940",
+      "cfgSlice": "07c034ffaaa954ddf4ecf985506747eedd47eaf1a64328813427506cf5daf48a",
+      "stories": []
+    },
+    {
+      "name": "Projects",
+      "group": "pages",
+      "srcSha": null,
+      "sourceKey": "c01942fd52b2ba5f",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "SkillsSection",
+      "group": "about",
+      "srcSha": null,
+      "sourceKey": "db9be45a4ea2c173",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    },
+    {
+      "name": "Tag",
+      "group": "general",
+      "srcSha": null,
+      "sourceKey": "668847ced58b674b",
+      "cfgSlice": "5ff899b099eb6923833804cda955efdd69101524bec86f67dac5537cd81802e8",
+      "stories": []
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Modal from jeisson-rodriguez-resume. Use via `window.JeissonRodriguezResume.Modal` (bundle loaded from the root `_ds_bundle.js`). Wrap the tree in `<MemoryRouter>` (full provider chain in README.md — components read theme/i18n from that context).
