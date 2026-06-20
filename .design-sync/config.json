@@ -1,0 +1,25 @@
+{
+    "projectId": "41cd9236-3fda-44fc-be92-81dffe76abb8",
+    "shape": "package",
+    "pkg": "jeisson-rodriguez-resume",
+    "entry": ".design-sync/synth-entry.mjs",
+    "componentSrcMap": {
+        "Button": "src/components/ui/button/index.tsx",
+        "Tag": "src/components/ui/tag/index.tsx",
+        "Modal": "src/components/ui/Modal/index.tsx",
+        "Fab": "src/components/ui/fab/index.tsx",
+        "Carousel": "src/components/ui/carousel/index.tsx",
+        "Logo": "src/components/ui/logo/index.tsx",
+        "Icon": "src/components/ui/Icon/index.tsx",
+        "TableOfContents": null,
+        "SmartToc": null
+    },
+    "cssEntry": ".design-sync/synth-src/global.css",
+    "overrides": {
+        "Fab": { "cardMode": "single", "viewport": "320x160" },
+        "Modal": { "cardMode": "single", "primaryStory": "Confirm", "viewport": "480x500" },
+        "Button": { "cardMode": "column" },
+        "Logo": { "cardMode": "column" }
+    },
+    "readmeHeader": ".design-sync/conventions.md"
+}
