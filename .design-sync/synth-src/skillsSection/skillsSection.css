@@ -1,0 +1,106 @@
+:root {
+  --color-primary: #f2441d;
+  --color-primary-light: #e98228;
+  --color-bg: #ece7e5;
+  --color-bg-secondary: #f2f2f2;
+  --color-bg-elevated: #f2f2f2;
+  --color-text: #2d3958;
+  --color-text-strong: #242426;
+  --color-border: #f2a25c;
+  --color-black: #0b0b0c;
+  --color-white: #f2f2f2;
+  --header-height: 64px;
+}
+
+[data-theme=dark] {
+  --color-primary: #f2441d;
+  --color-primary-light: #f2a25c;
+  --color-bg: #242426;
+  --color-bg-secondary: #103173;
+  --color-bg-elevated: #242426;
+  --color-text: #ddd4cc;
+  --color-text-strong: #f2f2f2;
+  --color-border: #f2441d;
+}
+
+.skills {
+  padding: 32px 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
+.skills h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-strong);
+  margin: 24px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
+.skills h3:first-of-type {
+  margin-top: 0;
+}
+.skills__group {
+  padding: 16px 24px;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
+  border-radius: 10px;
+  background: var(--color-bg-elevated);
+  margin-bottom: 16px;
+  transition: border-color 0.15s ease;
+}
+.skills__group:hover {
+  border-color: var(--color-primary);
+}
+.skills__group h4 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  margin-bottom: 16px;
+  padding-left: 8px;
+  border-left: 2px solid var(--color-primary);
+}
+.skills__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.skills__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.skills__item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skills__item-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-strong);
+}
+.skills__item-score {
+  font-size: 0.875rem;
+  font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  color: var(--color-primary);
+}
+.skills__bar {
+  height: 6px;
+  background: color-mix(in srgb, var(--color-primary) 35%, transparent);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.skills__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  border-radius: 6px;
+  transition: width 0.6s ease;
+}
+.skills__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 24px;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
+  border-radius: 10px;
+  background: var(--color-bg-elevated);
+}

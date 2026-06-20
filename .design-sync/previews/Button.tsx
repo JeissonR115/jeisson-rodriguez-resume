@@ -70,15 +70,24 @@ export function Disabled() {
 }
 
 // Button also renders as a plain anchor (`as="a"`) for external links — the
-// footer's GitHub/LinkedIn links use this form. (The router-aware `as="link"`
-// / `as="navlink"` forms aren't demoed here: Button ships pre-bundled into
-// the DS bundle with its own react-router-dom copy, so a MemoryRouter from a
-// separately-bundled preview can't share React context with it — see
-// .design-sync/NOTES.md.)
+// footer's GitHub/LinkedIn links use this form.
 export function AsAnchor() {
     return (
         <Button as="a" href="https://github.com" variant="secondary">
             Download CV
+        </Button>
+    );
+}
+
+// Real usage: the hero CTAs render as router links (`as="link"`) so the
+// styled button navigates client-side instead of doing a full page load
+// (src/pages/home/index.tsx). Every card in this DS is wrapped in a
+// MemoryRouter (cfg.provider in .design-sync/config.json) so this and
+// every other react-router-dom consumer share one router instance.
+export function AsLink() {
+    return (
+        <Button as="link" to="/projects" variant="primary">
+            View projects
         </Button>
     );
 }

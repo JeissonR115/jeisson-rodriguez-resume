@@ -1,9 +1,11 @@
 ## Setup
 
-No provider/wrapper is required — every component renders standalone with no required context. Two exceptions to know about:
+**Wrap any composition that uses `Header`, `Home`, or `Button`'s `as="link"`/`as="navlink"` forms in `<MemoryRouter>`** (from `react-router-dom`, bundled into this DS — see the provider chain in the auto-generated section below). Every other component renders standalone with no required context — `Footer`, `Projects`, and the About sub-sections (`AboutSection`, `ExperienceSection`, `EducationSection`, `SkillsSection`) take no props and read their content straight from real site data and i18next, no provider needed.
 
-- `Button` accepts `as="button" | "a" | "link" | "navlink"`. The `link`/`navlink` forms render `react-router-dom`'s `<Link>`/`<NavLink>` and need an ancestor `<Router>` (e.g. `<MemoryRouter>` in a design, `<BrowserRouter>` in the real app) — without one they throw. Default to `as="button"` or `as="a"` unless the design genuinely needs client-side routing.
-- Icons are passed in as children, not as a prop string: `<Button icon={<Sun size={16} />} iconOnly aria-label="Light mode" />` using `lucide-react`. There is also a site-specific `Icon` component (`<Icon id="github" size="md" />`) that renders an `<svg><use></use></svg>` against this site's own `/icons.svg` sprite — that sprite isn't part of this bundle, so `Icon` will render an empty box in any design; prefer `lucide-react` icons for new compositions.
+Two more things to know:
+
+- Page-level content (`Header`'s nav labels, `Home`'s hero copy, all four About sub-sections, `Projects`) comes from this site's real i18next instance (default language: Spanish, `es`) — it is already initialized when the bundle loads, nothing to wrap or configure. There's no language-switching prop; `Header`'s own language button calls `i18n.changeLanguage()` internally.
+- Icons are passed in as children, not as a prop string: `<Button icon={<Sun size={16} />} iconOnly aria-label="Light mode" />` using `lucide-react`. There is also a site-specific `Icon` component (`<Icon id="github" size="md" />`, used by `Footer`) that renders an `<svg><use></use></svg>` against this site's own `/icons.svg` sprite — that sprite isn't part of this bundle, so `Icon` renders an empty box in any design; prefer `lucide-react` icons for new compositions.
 
 ## Styling: CSS custom properties + BEM-style component classes
 

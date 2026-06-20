@@ -55,6 +55,16 @@ const COMPONENTS = {
     logo: 'src/components/ui/logo/logo.scss',
     icon: 'src/components/ui/Icon/icon.scss',
     // TableOfContents/SmartToc is intentionally out of scope — see NOTES.md.
+    header: 'src/components/layout/header/header.scss',
+    footer: 'src/components/layout/footer/footer.scss',
+    home: 'src/pages/home/home.scss',
+    projects: 'src/pages/projects/projects.scss',
+    aboutSection: 'src/pages/about/aboutSection.scss',
+    experienceSection: 'src/pages/about/experienceSection.scss',
+    educationSection: 'src/pages/about/educationSection.scss',
+    skillsSection: 'src/pages/about/skillsSection.scss',
+    // The `About` page wrapper itself is intentionally out of scope — it
+    // only adds the excluded TableOfContents around these same 4 sections.
 };
 
 for (const [name, relPath] of Object.entries(COMPONENTS)) {

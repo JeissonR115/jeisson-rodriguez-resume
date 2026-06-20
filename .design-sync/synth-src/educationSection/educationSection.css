@@ -1,0 +1,65 @@
+:root {
+  --color-primary: #f2441d;
+  --color-primary-light: #e98228;
+  --color-bg: #ece7e5;
+  --color-bg-secondary: #f2f2f2;
+  --color-bg-elevated: #f2f2f2;
+  --color-text: #2d3958;
+  --color-text-strong: #242426;
+  --color-border: #f2a25c;
+  --color-black: #0b0b0c;
+  --color-white: #f2f2f2;
+  --header-height: 64px;
+}
+
+[data-theme=dark] {
+  --color-primary: #f2441d;
+  --color-primary-light: #f2a25c;
+  --color-bg: #242426;
+  --color-bg-secondary: #103173;
+  --color-bg-elevated: #242426;
+  --color-text: #ddd4cc;
+  --color-text-strong: #f2f2f2;
+  --color-border: #f2441d;
+}
+
+.education h2:not(:first-child) {
+  margin-top: 32px;
+}
+.education__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 24px;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
+  border-radius: 10px;
+  background: var(--color-bg-elevated);
+  margin-bottom: 16px;
+  transition: border-color 0.15s ease;
+}
+.education__item:hover {
+  border-color: var(--color-primary);
+}
+.education__item:last-of-type {
+  margin-bottom: 0;
+}
+.education__institution {
+  font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+.education__period {
+  font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+.education__languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 24px;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
+  border-radius: 10px;
+  background: var(--color-bg-elevated);
+}

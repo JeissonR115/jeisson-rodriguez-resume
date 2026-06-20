@@ -1,0 +1,102 @@
+:root {
+  --color-primary: #f2441d;
+  --color-primary-light: #e98228;
+  --color-bg: #ece7e5;
+  --color-bg-secondary: #f2f2f2;
+  --color-bg-elevated: #f2f2f2;
+  --color-text: #2d3958;
+  --color-text-strong: #242426;
+  --color-border: #f2a25c;
+  --color-black: #0b0b0c;
+  --color-white: #f2f2f2;
+  --header-height: 64px;
+}
+
+[data-theme=dark] {
+  --color-primary: #f2441d;
+  --color-primary-light: #f2a25c;
+  --color-bg: #242426;
+  --color-bg-secondary: #103173;
+  --color-bg-elevated: #242426;
+  --color-text: #ddd4cc;
+  --color-text-strong: #f2f2f2;
+  --color-border: #f2441d;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: calc(100vh - 64px);
+  padding: 32px 0;
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  max-width: 55ch;
+}
+.hero__greeting {
+  font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  font-size: 1rem;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+.hero__name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text-strong);
+  letter-spacing: -1.5px;
+  margin: 0 0 4px;
+}
+@media (max-width: 768px) {
+  .hero__name {
+    font-size: 1.75rem;
+  }
+}
+.hero__role {
+  font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  font-size: 1rem;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+}
+.hero__subtitle {
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.hero__image {
+  flex-shrink: 0;
+  width: 340px;
+  height: 340px;
+}
+.hero__image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  object-position: center top;
+}
+@media (max-width: 768px) {
+  .hero__image {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    min-height: unset;
+    padding: 32px 0;
+  }
+  .hero__image {
+    width: 200px;
+    align-self: center;
+  }
+}

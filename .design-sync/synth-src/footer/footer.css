@@ -1,0 +1,47 @@
+:root {
+  --color-primary: #f2441d;
+  --color-primary-light: #e98228;
+  --color-bg: #ece7e5;
+  --color-bg-secondary: #f2f2f2;
+  --color-bg-elevated: #f2f2f2;
+  --color-text: #2d3958;
+  --color-text-strong: #242426;
+  --color-border: #f2a25c;
+  --color-black: #0b0b0c;
+  --color-white: #f2f2f2;
+  --header-height: 64px;
+}
+
+[data-theme=dark] {
+  --color-primary: #f2441d;
+  --color-primary-light: #f2a25c;
+  --color-bg: #242426;
+  --color-bg-secondary: #103173;
+  --color-bg-elevated: #242426;
+  --color-text: #ddd4cc;
+  --color-text-strong: #f2f2f2;
+  --color-border: #f2441d;
+}
+
+.footer {
+  border-top: 1px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
+  background: var(--color-bg);
+  padding: 0 24px;
+}
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.footer__copy {
+  font-size: 0.875rem;
+  color: var(--color-text);
+  font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}

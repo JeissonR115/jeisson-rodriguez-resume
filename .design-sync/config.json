@@ -12,9 +12,20 @@
         "Logo": "src/components/ui/logo/index.tsx",
         "Icon": "src/components/ui/Icon/index.tsx",
         "TableOfContents": null,
-        "SmartToc": null
+        "SmartToc": null,
+        "Header": "src/components/layout/header/index.tsx",
+        "Footer": "src/components/layout/footer/index.tsx",
+        "Home": "src/pages/home/index.tsx",
+        "Projects": "src/pages/projects/index.tsx",
+        "AboutSection": "src/pages/about/AboutSection.tsx",
+        "ExperienceSection": "src/pages/about/ExperienceSection.tsx",
+        "EducationSection": "src/pages/about/EducationSection.tsx",
+        "SkillsSection": "src/pages/about/SkillsSection.tsx"
     },
     "cssEntry": ".design-sync/synth-src/global.css",
+    "tsconfig": "tsconfig.app.json",
+    "extraEntries": ["react-router-dom", "./src/i18n/i18n.ts"],
+    "provider": { "component": "MemoryRouter" },
     "overrides": {
         "Fab": { "cardMode": "single", "viewport": "320x160" },
         "Modal": { "cardMode": "single", "primaryStory": "Confirm", "viewport": "480x500" },
