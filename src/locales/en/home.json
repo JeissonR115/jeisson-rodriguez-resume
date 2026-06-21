@@ -1,13 +1,21 @@
 {
     "hero": {
         "greeting": "Hi, I'm",
+        "badge": "Available for projects",
+        "subtitle": "Specialized in building enterprise solutions, scalable architectures and business-process optimization.",
+        "quote": "Turning business needs into robust, maintainable and scalable software.",
+        "tech": [".NET", "SQL Server", "JavaScript", "REST APIs", "Azure"],
         "actions": [
+            {
+                "label": "Learn more about me",
+                "href": "/about",
+                "variant": "primary"
+            },
             {
                 "label": "View projects",
                 "href": "/projects",
-                "variant": "primary"
-            },
-            { "label": "About me", "href": "/about", "variant": "secondary" }
+                "variant": "secondary"
+            }
         ]
     }
 }
