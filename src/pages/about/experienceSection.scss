@@ -1,13 +1,54 @@
 .experience {
-    &__item {
-        padding: $space-lg;
-        border: 1px solid $accent-border;
-        border-radius: $radius-md;
-        margin-bottom: $space-lg;
-        background: $bg-elevated;
+    &__timeline {
+        position: relative;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: $space-lg;
 
-        &:last-child {
-            margin-bottom: 0;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background: linear-gradient(
+                var(--color-primary),
+                color-mix(in srgb, var(--color-primary) 8%, transparent)
+            );
+        }
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    &__marker {
+        position: absolute;
+        left: -30px;
+        top: 5px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: $bg;
+        border: 3px solid $accent-border;
+
+        &--active {
+            border-color: $color-primary;
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 16%, transparent);
+        }
+    }
+
+    &__card {
+        padding: 22px $space-lg;
+        border-radius: 14px;
+        background: $bg-elevated;
+        border: 1px solid color-mix(in srgb, var(--color-text-strong) 9%, transparent);
+        transition: border-color $transition-fast;
+
+        &:hover {
+            border-color: $accent-border;
         }
     }
 
@@ -16,53 +57,69 @@
         align-items: baseline;
         justify-content: space-between;
         gap: $space-md;
-        margin-bottom: $space-xs;
-        @media (max-width: 768px) {
-            flex-direction: column;
-            gap: $space-xs;
+        flex-wrap: wrap;
+
+        h3 {
+            margin: 0;
+            font-size: 1.15rem;
+            font-weight: $font-weight-bold;
+            color: $text-strong;
         }
     }
 
     &__period {
         font-family: $font-mono;
         font-size: $font-size-sm;
-        color: $color-primary;
+        padding: 3px 10px;
+        border-radius: 100px;
+        background: color-mix(in srgb, var(--color-text-strong) 8%, transparent);
+        color: $text;
         white-space: nowrap;
         flex-shrink: 0;
+
+        &--current {
+            background: color-mix(in srgb, var(--color-primary) 14%, transparent);
+            color: $color-primary;
+        }
     }
 
     &__role {
+        font-family: $font-mono;
         font-size: $font-size-sm;
         font-weight: $font-weight-medium;
-        color: $color-primary;
-        font-family: $font-mono;
-        margin-bottom: $space-sm;
+        color: $color-primary-light;
+        margin: $space-sm 0 0;
     }
 
     &__description {
         color: $text;
-        line-height: 1.7;
-        margin-bottom: $space-md;
+        line-height: 1.65;
+        margin: 12px 0 0;
+        font-size: 0.9rem;
     }
 
     &__works-title {
-        font-size: $font-size-sm;
+        font-size: 0.75rem;
         font-weight: $font-weight-bold;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
         color: $text-strong;
-        margin-bottom: $space-sm;
+        margin: 18px 0 10px;
     }
 
     &__works {
         list-style: none;
+        margin: 0;
+        padding: 0;
         display: flex;
         flex-direction: column;
-        gap: $space-xs;
+        gap: 7px;
 
         li {
             display: flex;
-            align-items: center;
-            gap: $space-sm;
-            font-size: $font-size-sm;
+            gap: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
             color: $text;
 
             &::before {

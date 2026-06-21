@@ -12,16 +12,28 @@ export function AboutSection() {
 
     return (
         <section className="about container">
+            <span className="about__eyebrow">
+                <span className="about__eyebrow-line" />
+                {t('title')}
+            </span>
+
             <p className="about__role">{t('role')}</p>
+
             {profile.available && (
                 <span className="about__available">{t('available')}</span>
             )}
+
             <p className="about__summary">{t('summary')}</p>
 
             <h2>{t('highlights.title')}</h2>
             <ul className="about__highlights">
-                {highlights.map((item) => (
-                    <li key={item}>{item}</li>
+                {highlights.map((item, i) => (
+                    <li key={item} className="about__highlight">
+                        <span className="about__highlight-num">
+                            {String(i + 1).padStart(2, '0')}
+                        </span>
+                        <span className="about__highlight-text">{item}</span>
+                    </li>
                 ))}
             </ul>
         </section>

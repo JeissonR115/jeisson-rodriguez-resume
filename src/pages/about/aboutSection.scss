@@ -1,67 +1,105 @@
 .about {
+    &__eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: $space-sm;
+        font-family: $font-mono;
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: $color-primary;
+    }
+
+    &__eyebrow-line {
+        width: 24px;
+        height: 1.5px;
+        background: $color-primary;
+    }
+
     &__role {
         font-family: $font-mono;
-        font-size: $font-size-sm;
-        color: $color-primary;
+        font-size: $font-size-md;
+        color: $color-primary-light;
         font-weight: $font-weight-medium;
-        margin-bottom: $space-sm;
+        margin: $space-md 0 0;
     }
 
     &__available {
         display: inline-flex;
         align-items: center;
-        gap: $space-xs;
+        gap: $space-sm;
+        margin-top: $space-sm;
+        padding: 5px 12px 5px 10px;
+        border-radius: 100px;
+        border: 1px solid $accent-border;
         font-size: $font-size-sm;
-        color: $color-primary;
         font-family: $font-mono;
-        margin-bottom: $space-md;
+        color: $color-primary;
 
         &::before {
             content: '';
-            display: inline-block;
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background: $color-primary;
-            animation: pulse 2s infinite;
+            animation: pulse 2.2s ease-in-out infinite;
         }
     }
 
     &__summary {
-        color: $text;
-        line-height: 1.7;
-        max-width: 65ch;
-        margin-bottom: $space-xl;
+        color: $text-strong;
+        font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+        line-height: 1.65;
+        max-width: 60ch;
+        text-wrap: pretty;
+        margin: $space-lg 0 0;
     }
 
     &__highlights {
         list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $space-sm + 4px;
+
+        @media (max-width: 640px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__highlight {
         display: flex;
-        flex-direction: column;
-        gap: $space-sm;
+        align-items: flex-start;
+        gap: 13px;
+        padding: $space-md 18px;
+        border-radius: 12px;
+        background: $bg-elevated;
+        border: 1px solid color-mix(in srgb, var(--color-text-strong) 9%, transparent);
+        transition: border-color $transition-fast, transform $transition-fast;
 
-        li {
-            display: flex;
-            align-items: center;
-            gap: $space-sm;
-            color: $text;
+        &:hover {
+            border-color: $accent-border;
+            transform: translateY(-2px);
+        }
 
-            &::before {
-                content: '▹';
-                color: $color-primary;
-                font-family: $font-mono;
-                flex-shrink: 0;
-            }
+        &-num {
+            font-family: $font-mono;
+            font-size: 0.78rem;
+            font-weight: $font-weight-bold;
+            color: $color-primary;
+            line-height: 1.5;
+        }
+
+        &-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: $text-strong;
         }
     }
 }
 
 @keyframes pulse {
-    0%,
-    100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.4;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
 }
