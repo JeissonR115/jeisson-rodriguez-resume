@@ -1,5 +1,7 @@
 {
     "title": "Projects",
+    "eyebrow": "Selected work",
+    "countLabel": "projects",
     "items": {
         "portfolio": {
             "name": "Portfolio",
