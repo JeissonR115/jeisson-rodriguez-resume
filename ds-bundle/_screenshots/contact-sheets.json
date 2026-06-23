@@ -1,0 +1,22 @@
+[
+  {
+    "sheet": 1,
+    "components": [
+      "AboutSection",
+      "Button",
+      "Carousel",
+      "EducationSection",
+      "ExperienceSection",
+      "Fab",
+      "Footer",
+      "Header",
+      "Home",
+      "Icon",
+      "Logo",
+      "Modal",
+      "Projects",
+      "SkillsSection",
+      "Tag"
+    ]
+  }
+]

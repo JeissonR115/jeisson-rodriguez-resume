@@ -1,15 +1,19 @@
 {
     "hero": {
         "greeting": "Hola, soy",
+        "badge": "Disponible para proyectos",
+        "subtitle": "Especializado en el desarrollo de soluciones empresariales, arquitecturas escalables y la optimización de procesos de negocio.",
+        "quote": "Transformando necesidades de negocio en software robusto, mantenible y escalable.",
+        "tech": [".NET", "SQL Server", "JavaScript", "REST APIs", "Azure"],
         "actions": [
             {
-                "label": "Ver proyectos",
-                "href": "/projects",
+                "label": "Conocer más sobre mí",
+                "href": "/about",
                 "variant": "primary"
             },
             {
-                "label": "Sobre mí",
-                "href": "/about",
+                "label": "Ver proyectos",
+                "href": "/projects",
                 "variant": "secondary"
             }
         ]

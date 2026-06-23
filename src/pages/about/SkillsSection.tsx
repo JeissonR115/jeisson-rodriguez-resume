@@ -25,33 +25,35 @@ export function SkillsSection() {
             <h2>{t('title')}</h2>
 
             <h3>{t('technical.title')}</h3>
-            {skillEntries.map(([category, items]) => (
-                <div key={String(category)} className="skills__group">
-                    <h4>{t(`technical.categories.${category}`)}</h4>
-                    <div className="skills__list">
-                        {items.map((skill) => (
-                            <div key={skill.name} className="skills__item">
-                                <div className="skills__item-header">
-                                    <span className="skills__item-name">
-                                        {skill.name}
-                                    </span>
-                                    <span className="skills__item-score">
-                                        {skill.score}/{maxScore}
-                                    </span>
+            <div className="skills__grid">
+                {skillEntries.map(([category, items]) => (
+                    <div key={String(category)} className="skills__group">
+                        <h4>{t(`technical.categories.${category}`)}</h4>
+                        <div className="skills__list">
+                            {items.map((skill) => (
+                                <div key={skill.name} className="skills__item">
+                                    <div className="skills__item-header">
+                                        <span className="skills__item-name">
+                                            {skill.name}
+                                        </span>
+                                        <span className="skills__item-score">
+                                            {skill.score}/{maxScore}
+                                        </span>
+                                    </div>
+                                    <div className="skills__bar">
+                                        <div
+                                            className="skills__bar-fill"
+                                            style={{
+                                                width: `${(skill.score / maxScore) * 100}%`,
+                                            }}
+                                        />
+                                    </div>
                                 </div>
-                                <div className="skills__bar">
-                                    <div
-                                        className="skills__bar-fill"
-                                        style={{
-                                            width: `${(skill.score / maxScore) * 100}%`,
-                                        }}
-                                    />
-                                </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
 
             <h3>{t('soft.title')}</h3>
             <div className="skills__tags">

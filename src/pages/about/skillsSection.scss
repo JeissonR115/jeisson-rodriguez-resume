@@ -1,30 +1,35 @@
 .skills {
-    padding: $space-xl 0;
-    border-top: 1px solid $accent-border;
-
     h3 {
         font-size: $font-size-md;
         font-weight: $font-weight-bold;
         color: $text-strong;
         margin: $space-lg 0 $space-md;
-        padding-bottom: $space-sm;
-        border-bottom: 1px solid $accent-border;
 
         &:first-of-type {
-            margin-top: 0;
+            margin-top: $space-md;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $space-md - 2px;
+
+        @media (max-width: 640px) {
+            grid-template-columns: 1fr;
         }
     }
 
     &__group {
-        padding: $space-md $space-lg;
-        border: 1px solid $accent-border;
-        border-radius: $radius-md;
+        padding: 18px $space-lg;
+        border: 1px solid color-mix(in srgb, var(--color-text-strong) 9%, transparent);
+        border-radius: 14px;
         background: $bg-elevated;
-        margin-bottom: $space-md;
-        transition: border-color $transition-fast;
+        transition: border-color $transition-normal, transform $transition-normal;
 
         &:hover {
-            border-color: $color-primary;
+            border-color: $accent-border;
+            transform: translateY(-2px);
         }
 
         h4 {
@@ -32,8 +37,8 @@
             font-weight: $font-weight-medium;
             color: $color-primary;
             font-family: $font-mono;
-            margin-bottom: $space-md;
-            padding-left: $space-sm;
+            margin: 0 0 $space-md;
+            padding-left: $space-sm + 2px;
             border-left: 2px solid $color-primary;
         }
     }
@@ -41,13 +46,13 @@
     &__list {
         display: flex;
         flex-direction: column;
-        gap: $space-md;
+        gap: 13px;
     }
 
     &__item {
         display: flex;
         flex-direction: column;
-        gap: $space-xs;
+        gap: 6px;
 
         &-header {
             display: flex;
@@ -62,7 +67,7 @@
         }
 
         &-score {
-            font-size: $font-size-sm;
+            font-size: 0.75rem;
             font-family: $font-mono;
             color: $color-primary;
         }
@@ -70,15 +75,16 @@
 
     &__bar {
         height: 6px;
-        background: $accent-border;
+        background: color-mix(in srgb, var(--color-primary) 16%, transparent);
         border-radius: $radius-sm;
         overflow: hidden;
 
         &-fill {
             height: 100%;
-            background: linear-gradient(90deg, $color-primary, $accent-hover);
+            background: linear-gradient(90deg, $color-primary, $color-primary-light);
             border-radius: $radius-sm;
-            transition: width 0.6s ease;
+            transform-origin: left;
+            animation: skillBar 0.8s ease both;
         }
     }
 
@@ -86,9 +92,16 @@
         display: flex;
         flex-wrap: wrap;
         gap: $space-sm;
-        padding: $space-md $space-lg;
-        border: 1px solid $accent-border;
-        border-radius: $radius-md;
-        background: $bg-elevated;
+    }
+}
+
+@keyframes skillBar {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skills__bar-fill {
+        animation: none;
     }
 }

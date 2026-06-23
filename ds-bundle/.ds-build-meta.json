@@ -1,0 +1,9 @@
+{
+  "namespace": "JeissonRodriguezResume",
+  "source": "jeisson-rodriguez-resume@0.0.0",
+  "shape": "package",
+  "provider": "MemoryRouter",
+  "componentCount": 15,
+  "skippedStoryIds": [],
+  "runtimeFontPrefixes": []
+}

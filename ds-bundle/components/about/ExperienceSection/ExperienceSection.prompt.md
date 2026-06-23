@@ -1,0 +1,1 @@
+ExperienceSection from jeisson-rodriguez-resume. Use via `window.JeissonRodriguezResume.ExperienceSection` (bundle loaded from the root `_ds_bundle.js`). Wrap the tree in `<MemoryRouter>` (full provider chain in README.md — components read theme/i18n from that context).

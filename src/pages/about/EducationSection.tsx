@@ -19,9 +19,7 @@ export function EducationSection() {
             <h2>{t('title')}</h2>
             {profile.education.map((edu) => (
                 <div key={edu.id} className="education__item">
-                    <h3>
-                        {t(`degrees.${edu.id as EducationDegreeId}.degree`)}
-                    </h3>
+                    <h3>{t(`degrees.${edu.id as EducationDegreeId}.degree`)}</h3>
                     <p className="education__institution">{edu.institution}</p>
                     <p className="education__period">
                         {edu.start} — {edu.end ?? t('present')}
@@ -30,16 +28,18 @@ export function EducationSection() {
             ))}
 
             <h2>{t('certificationsTitle')}</h2>
-            {profile.certifications.map((cert) => (
-                <div key={cert.id} className="education__item">
-                    <h3>
-                        {t(`certifications.${cert.id as CertificationId}.name`)}
-                    </h3>
-                    <p className="education__period">
-                        {cert.start} — {cert.end}
-                    </p>
-                </div>
-            ))}
+            <div className="education__grid">
+                {profile.certifications.map((cert) => (
+                    <div key={cert.id} className="education__item">
+                        <h3>
+                            {t(`certifications.${cert.id as CertificationId}.name`)}
+                        </h3>
+                        <p className="education__period">
+                            {cert.start} — {cert.end}
+                        </p>
+                    </div>
+                ))}
+            </div>
 
             <h2>{t('languages.title')}</h2>
             <div className="education__languages">
