@@ -46,7 +46,7 @@ function Home() {
                             key={action.href}
                             as="link"
                             to={action.href}
-                            size="lg"
+                            size="md"
                             variant={
                                 isVariant(action.variant)
                                     ? action.variant

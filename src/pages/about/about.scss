@@ -22,7 +22,7 @@
 
     &__content {
         min-width: 0;
-
+        width: auto;
         & > .container:first-child {
             margin-top: 0;
         }
@@ -30,7 +30,8 @@
         & > .container {
             margin-top: $space-xxl + 16px;
             padding-top: $space-xl + 12px;
-            border-top: 1px solid color-mix(in srgb, var(--color-text-strong) 10%, transparent);
+            border-top: 1px solid
+                color-mix(in srgb, var(--color-text-strong) 10%, transparent);
 
             &:first-child {
                 padding-top: 0;
