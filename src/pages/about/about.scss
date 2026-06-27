@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: 210px 1fr;
     gap: $space-xxl + 8px;
-    padding: $space-xxl 0;
 
     @media (max-width: 900px) {
         grid-template-columns: 1fr;

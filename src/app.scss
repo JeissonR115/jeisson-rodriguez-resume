@@ -3,8 +3,11 @@
     flex-direction: column;
     min-height: 100vh;
     &__content {
+        & > * {
+            padding: 0 $space-xl;
+            padding-top: $space-xl;
+        }
         flex: 1;
-        padding: 0 $space-xl;
         // ─── Desktop: horizontal ─────────────────────
         &--forward {
             animation: slideLeft 0.3s ease both;

@@ -5,7 +5,6 @@
     grid-template-columns: 1.04fr 0.96fr;
     align-items: center;
     gap: $space-xxl;
-    padding: $space-xl 0;
     overflow: hidden;
 
     // Subtle dotted grid that adapts to the active theme
@@ -38,6 +37,8 @@
         z-index: 1;
         display: flex;
         flex-direction: column;
+        width: 100%;
+        min-width: 250px;
         max-width: 600px;
     }
 
@@ -163,7 +164,6 @@
         width: 100%;
         max-width: 440px;
         border-radius: $radius-lg;
-        overflow: hidden;
         background: #0e1016;
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow:
@@ -386,7 +386,6 @@
     @media (max-width: 980px) {
         grid-template-columns: 1fr;
         gap: $space-xxl;
-
         &__visual {
             order: 2;
             min-height: 440px;
@@ -394,6 +393,7 @@
     }
 
     @media (max-width: 560px) {
+        display: block;
         &__chip {
             display: none;
         }
